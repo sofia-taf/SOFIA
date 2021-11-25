@@ -17,6 +17,9 @@
 #' Data frame like \code{dat} but with additional columns containing stock
 #' status category information.
 #'
+#' @seealso
+#' \code{\link{TSAF-package}} gives an overview of the package.
+#'
 #' @examples
 #' \dontrun{
 #' compCat(newResTab, method="effDepP")

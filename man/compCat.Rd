@@ -32,3 +32,6 @@ compCat(newResTab, method="effDepP")
 }
 
 }
+\seealso{
+\code{\link{TSAF-package}} gives an overview of the package.
+}
