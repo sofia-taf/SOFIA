@@ -14,6 +14,10 @@ analyses.
 \tabular{ll}{
   \code{\link{compCat}} \tab stock status categories
 }
+\emph{Plot:}
+\tabular{ll}{
+  \code{\link{plotProp}} \tab summary of stock status categories
+}
 }
 \references{
 \url{https://github.com/sofia-tsaf/TSAF}

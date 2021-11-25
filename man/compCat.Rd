@@ -33,5 +33,7 @@ compCat(newResTab, method="effDepP")
 
 }
 \seealso{
+\code{\link{plotProp}} plots a summary of stock status categories.
+
 \code{\link{TSAF-package}} gives an overview of the package.
 }
