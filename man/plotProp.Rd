@@ -40,3 +40,6 @@ plotProp(newResTab, method="effEdepP", cats=3, type="all")
 
 \code{\link{TSAF-package}} gives an overview of the package.
 }
+\author{
+Dan Ovando, with a contribution by Arni Magnusson.
+}

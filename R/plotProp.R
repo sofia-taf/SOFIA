@@ -14,6 +14,8 @@
 #'
 #' @return A \code{ggplot} object.
 #'
+#' @author Dan Ovando, with a contribution by Arni Magnusson.
+#'
 #' @seealso
 #' \code{\link{ggplot}} is the underlying function used to produce the plot.
 #'
