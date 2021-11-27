@@ -20,7 +20,7 @@
 #'   \code{\link{plotProp}} \tab summary of stock status categories
 #' }
 #'
-#' @author Dan Ovando, Arni Magnusson, and Rishi Sharma.
+#' @author Rishi Sharma and Arni Magnusson.
 #'
 #' @references
 #' \url{https://github.com/sofia-tsaf/TSAF}

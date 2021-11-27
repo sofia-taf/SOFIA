@@ -17,7 +17,7 @@
 #' Data frame like \code{dat} but with additional columns containing stock
 #' status category information.
 #'
-#' @author Dan Ovando, with a contribution by Arni Magnusson.
+#' @author Rishi Sharma, with a contribution by Arni Magnusson.
 #'
 #' @seealso
 #' \code{\link{plotProp}} plots a summary of stock status categories.

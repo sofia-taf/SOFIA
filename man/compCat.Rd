@@ -38,5 +38,5 @@ compCat(newResTab, method="effDepP")
 \code{\link{TSAF-package}} gives an overview of the package.
 }
 \author{
-Dan Ovando, with a contribution by Arni Magnusson.
+Rishi Sharma, with a contribution by Arni Magnusson.
 }

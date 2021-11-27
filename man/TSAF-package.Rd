@@ -27,5 +27,5 @@ analyses.
 model) and \pkg{TAF} (workflow).
 }
 \author{
-Dan Ovando, Arni Magnusson, and Rishi Sharma.
+Rishi Sharma and Arni Magnusson.
 }
