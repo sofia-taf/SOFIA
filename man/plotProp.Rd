@@ -7,7 +7,9 @@
 plotProp(dat, method = "cmsy.naive", cats = 4, type = "prop")
 }
 \arguments{
-\item{dat}{a data frame of stock time series, containing B/Bmsy and F/Fmsy.}
+\item{dat}{a data frame of stock time series, containing columns named
+\code{bbmsy} and \code{ffmsy}, as well as method-specific
+\code{bbmsy.*} and \code{ffmsy.*}.}
 
 \item{method}{a string indicating which method was used to estimate B/Bmsy
 and F/Fmsy.}
@@ -25,6 +27,11 @@ A \code{ggplot} object.
 \description{
 Plot a summary of stock status categories by year: underfished (green), fully
 fished (yellow), or overfished (red).
+}
+\details{
+The column names in \code{dat} should contain the \code{method} name as a
+suffix. For example, if \code{method = "effEdepP"}, then this function will
+look for columns called \code{bbmsy.effEdepP} and \code{ffmsy.effEdepP}.
 }
 \examples{
 \dontrun{

@@ -3,7 +3,9 @@
 #' Plot a summary of stock status categories by year: underfished (green), fully
 #' fished (yellow), or overfished (red).
 #'
-#' @param dat a data frame of stock time series, containing B/Bmsy and F/Fmsy.
+#' @param dat a data frame of stock time series, containing columns named
+#'        \code{bbmsy} and \code{ffmsy}, as well as method-specific
+#'        \code{bbmsy.*} and \code{ffmsy.*}.
 #' @param method a string indicating which method was used to estimate B/Bmsy
 #'        and F/Fmsy.
 #' @param cats either \code{3} or \code{4}, indicating whether to plot the stock
@@ -11,6 +13,11 @@
 #'        fishing mortality (4 categories).
 #' @param type a string indicating the type of plot, either \code{"prop"} or
 #'        \code{"all"}.
+#'
+#' @details
+#' The column names in \code{dat} should contain the \code{method} name as a
+#' suffix. For example, if \code{method = "effEdepP"}, then this function will
+#' look for columns called \code{bbmsy.effEdepP} and \code{ffmsy.effEdepP}.
 #'
 #' @return A \code{ggplot} object.
 #'
