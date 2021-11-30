@@ -5,7 +5,6 @@ Title: Tools to Work with SOFIA-TSAF Analyses
 Authors@R: c(person("Rishi", "Sharma", role="aut"),
              person("Arni", "Magnusson", role=c("aut","cre"), email="thisisarni@gmail.com"))
 Imports: ggplot2
-LazyData: yes
 Description: Tools that support the Transparent SOFIA Assessment Framework
   (TSAF) analyses.
 License: GPL-3
