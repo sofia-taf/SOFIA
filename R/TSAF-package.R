@@ -11,6 +11,10 @@
 #' analyses.
 #'
 #' @details
+#' \emph{Import:}
+#' \tabular{ll}{
+#'   \code{\link{readCatch}} \tab read catch data
+#' }
 #' \emph{Calculate:}
 #' \tabular{ll}{
 #'   \code{\link{compCat}} \tab stock status categories

@@ -2,9 +2,11 @@
 
 export(compCat)
 export(plotProp)
+export(readCatch)
 importFrom(ggplot2,aes_string)
 importFrom(ggplot2,geom_bar)
 importFrom(ggplot2,geom_raster)
 importFrom(ggplot2,ggplot)
 importFrom(ggplot2,scale_fill_manual)
 importFrom(ggplot2,theme_minimal)
+importFrom(utils,read.csv)
