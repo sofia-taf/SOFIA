@@ -10,6 +10,10 @@ Tools that support the Transparent SOFIA Assessment Framework (TSAF)
 analyses.
 }
 \details{
+\emph{Prepare data:}
+\tabular{ll}{
+  \code{\link{mergeCatchEffort}} \tab merge catch and effort data
+}
 \emph{Calculate:}
 \tabular{ll}{
   \code{\link{compCat}} \tab stock status categories
