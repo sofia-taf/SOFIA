@@ -7,12 +7,12 @@
 compCat(dat, method = "cmsy.naive")
 }
 \arguments{
-\item{dat}{a data frame of stock time series, containing columns named
+\item{dat}{data frame of stock time series, containing columns named
 \code{bbmsy} and \code{ffmsy}, as well as method-specific
 \code{bbmsy.*} and \code{ffmsy.*}.}
 
-\item{method}{a string indicating which method was used to estimate B/Bmsy
-and F/Fmsy.}
+\item{method}{string indicating which method was used to estimate B/Bmsy and
+F/Fmsy.}
 }
 \value{
 Data frame like \code{dat} but with additional columns containing stock

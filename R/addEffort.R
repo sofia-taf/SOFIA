@@ -2,10 +2,10 @@
 #'
 #' Add \code{effort} column to catch data.
 #'
-#' @param catch data frame (or \code{tibble}) containing \code{year},
-#'        \code{stock}, and \code{capture}.
-#' @param effort data frame (\code{tibble}) containing \code{year},
-#'        \code{stock}, and \code{effort}.
+#' @param catch \code{tibble} containing \code{year}, \code{stock}, and
+#'        \code{capture}.
+#' @param effort \code{tibble} containing \code{year}, \code{stock}, and
+#'        \code{effort}.
 #' @param stocks.combined whether to use the same effort data for all stocks.
 #'
 #' @details

@@ -3,11 +3,11 @@
 #' Calculate stock status categories from B/Bmsy and F/Fmsy, and add as columns
 #' to an existing data frame.
 #'
-#' @param dat a data frame of stock time series, containing columns named
+#' @param dat data frame of stock time series, containing columns named
 #'        \code{bbmsy} and \code{ffmsy}, as well as method-specific
 #'        \code{bbmsy.*} and \code{ffmsy.*}.
-#' @param method a string indicating which method was used to estimate B/Bmsy
-#'        and F/Fmsy.
+#' @param method string indicating which method was used to estimate B/Bmsy and
+#'        F/Fmsy.
 #'
 #' @details
 #' The column names in \code{dat} should contain the \code{method} name as a

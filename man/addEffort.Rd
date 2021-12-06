@@ -7,11 +7,11 @@
 addEffort(catch, effort, stocks.combined)
 }
 \arguments{
-\item{catch}{data frame (or \code{tibble}) containing \code{year},
-\code{stock}, and \code{capture}.}
+\item{catch}{\code{tibble} containing \code{year}, \code{stock}, and
+\code{capture}.}
 
-\item{effort}{data frame (\code{tibble}) containing \code{year},
-\code{stock}, and \code{effort}.}
+\item{effort}{\code{tibble} containing \code{year}, \code{stock}, and
+\code{effort}.}
 
 \item{stocks.combined}{whether to use the same effort data for all stocks.}
 }

@@ -3,15 +3,15 @@
 #' Plot a summary of stock status categories by year: underfished (green), fully
 #' fished (yellow), or overfished (red).
 #'
-#' @param dat a data frame of stock time series, containing columns named
+#' @param dat data frame of stock time series, containing columns named
 #'        \code{bbmsy} and \code{ffmsy}, as well as method-specific
 #'        \code{bbmsy.*} and \code{ffmsy.*}.
-#' @param method a string indicating which method was used to estimate B/Bmsy
-#'        and F/Fmsy.
+#' @param method string indicating which method was used to estimate B/Bmsy and
+#'        F/Fmsy.
 #' @param cats either \code{3} or \code{4}, indicating whether to plot the stock
 #'        status based on biomass only (3 categories) or based on biomass and
 #'        fishing mortality (4 categories).
-#' @param type a string indicating the type of plot, either \code{"prop"} or
+#' @param type string indicating the type of plot, either \code{"prop"} or
 #'        \code{"all"}.
 #'
 #' @details
