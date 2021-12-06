@@ -1,6 +1,6 @@
-#' Merge Catch and Effort
+#' Add Effort
 #'
-#' Merge catch and effort data into a common data frame.
+#' Add \code{effort} column to catch data.
 #'
 #' @param catch data frame (or \code{tibble}) containing \code{year},
 #'        \code{stock}, and \code{capture}.
@@ -28,13 +28,13 @@
 #'
 #' @examples
 #' \dontrun{
-#' mergeCatchEffort(catch, effort, stocks.combined=TRUE)
-#' mergeCatchEffort(catch, effort, stocks.combined=FALSE)
+#' addEffort(catch, effort, stocks.combined=TRUE)
+#' addEffort(catch, effort, stocks.combined=FALSE)
 #' }
 #'
 #' @export
 
-mergeCatchEffort <- function(catch, effort, stocks.combined)
+addEffort <- function(catch, effort, stocks.combined)
 {
   if(missing(stocks.combined) ||
      !identical(stocks.combined,TRUE) && !identical(stocks.combined,FALSE))

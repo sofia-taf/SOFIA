@@ -12,7 +12,7 @@ analyses.
 \details{
 \emph{Prepare data:}
 \tabular{ll}{
-  \code{\link{mergeCatchEffort}} \tab merge catch and effort data
+  \code{\link{addEffort}} \tab add effort column to catch data
 }
 \emph{Calculate:}
 \tabular{ll}{
