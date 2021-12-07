@@ -2,7 +2,9 @@
 
 export(addDriors)
 export(addEffort)
+export(calcCat)
 export(compCat)
+export(plotCat)
 export(plotProp)
 importFrom(ggplot2,aes_string)
 importFrom(ggplot2,geom_bar)

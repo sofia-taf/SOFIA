@@ -17,11 +17,11 @@ analyses.
 }
 \emph{Calculate:}
 \tabular{ll}{
-  \code{\link{compCat}} \tab stock status categories
+  \code{\link{calcCat}} \tab stock status categories
 }
 \emph{Plot:}
 \tabular{ll}{
-  \code{\link{plotProp}} \tab summary of stock status categories
+  \code{\link{plotCat}} \tab summary of stock status categories
 }
 }
 \references{

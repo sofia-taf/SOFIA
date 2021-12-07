@@ -1,4 +1,4 @@
-#' Compute Categories
+#' Calculate Categories
 #'
 #' Calculate stock status categories from B/Bmsy and F/Fmsy, and add as columns
 #' to an existing data frame.
@@ -21,18 +21,20 @@
 #' @author Rishi Sharma, with a contribution by Arni Magnusson.
 #'
 #' @seealso
-#' \code{\link{plotProp}} plots a summary of stock status categories.
+#' \code{\link{plotCat}} plots a summary of stock status categories.
 #'
 #' \code{\link{TSAF-package}} gives an overview of the package.
 #'
 #' @examples
 #' \dontrun{
-#' compCat(newResTab, method="effDepP")
+#' calcCat(newResTab, method="effDepP")
 #' }
+#'
+#' @aliases compCat
 #'
 #' @export
 
-compCat <- function(dat, method="cmsy.naive")
+calcCat <- function(dat, method="cmsy.naive")
 {
   tmpDat <- dat
   sep <- if(method == "") "" else "."
@@ -52,4 +54,15 @@ compCat <- function(dat, method="cmsy.naive")
   tmpDat$confMat3 <- (tmpDat$trueCat3 - 1) * 3 + tmpDat$estCat3
 
   tmpDat
+}
+
+#' @export
+
+## compCat() was an older name for calcCat() that was used in many TSAF scripts,
+## so we provide historical support.
+
+compCat <- function(...)
+{
+  ## .Deprecated("calcCat")
+  calcCat(...)
 }
