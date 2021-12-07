@@ -13,6 +13,7 @@
 #' @details
 #' \emph{Prepare data:}
 #' \tabular{ll}{
+#'   \code{\link{addDriors}} \tab add driors column to stocks object\cr
 #'   \code{\link{addEffort}} \tab add effort column to catch data
 #' }
 #' \emph{Calculate:}

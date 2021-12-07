@@ -1,6 +1,6 @@
 #' Add Effort
 #'
-#' Add \code{effort} column to catch data.
+#' Add effort column to catch data.
 #'
 #' @param catch \code{tibble} containing \code{year}, \code{stock}, and
 #'        \code{capture}.
@@ -24,6 +24,8 @@
 #' \code{\link{merge}} is the underlying function used to merge the two data
 #' frames.
 #'
+#' \code{\link{addDriors}} adds a driors column to stocks.
+#'
 #' \code{\link{TSAF-package}} gives an overview of the package.
 #'
 #' @examples
@@ -36,9 +38,6 @@
 
 addEffort <- function(catch, effort, stocks.combined)
 {
-  if(missing(stocks.combined) ||
-     !identical(stocks.combined,TRUE) && !identical(stocks.combined,FALSE))
-    stop("stocks.combined must be either TRUE or FALSE")
   x <- if(stocks.combined)
          merge(catch, effort[effort$stock=="All",c("year","effort")], by="year",
                all.x=TRUE, sort=FALSE)

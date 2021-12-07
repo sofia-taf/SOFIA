@@ -19,7 +19,7 @@ addEffort(catch, effort, stocks.combined)
 Data frame like \code{catch} but with the additional column \code{effort}.
 }
 \description{
-Add \code{effort} column to catch data.
+Add effort column to catch data.
 }
 \details{
 If \code{stocks.combined = TRUE} then the effort data for \code{stock$All} is
@@ -38,6 +38,8 @@ addEffort(catch, effort, stocks.combined=FALSE)
 \seealso{
 \code{\link{merge}} is the underlying function used to merge the two data
 frames.
+
+\code{\link{addDriors}} adds a driors column to stocks.
 
 \code{\link{TSAF-package}} gives an overview of the package.
 }
