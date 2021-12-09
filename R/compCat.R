@@ -11,12 +11,15 @@
 #'
 #' @details
 #' The column names in \code{dat} should contain the \code{method} name as a
-#' suffix. For example, if \code{method = "effEdepP"}, then this function will
+#' suffix. For example, if \code{method = "effEdepP"} (Effective Effort and Depletion Prior), then this function will
 #' look for columns called \code{bbmsy.effEdepP} and \code{ffmsy.effEdepP}.
 #'
 #' @return
 #' Data frame like \code{dat} but with additional columns containing stock
 #' status category information.
+#' 
+#' @note
+#' The data frame dat comes from the output module run and naming convention of method should match that
 #'
 #' @author Rishi Sharma, with a contribution by Arni Magnusson.
 #'
