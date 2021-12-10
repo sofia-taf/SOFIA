@@ -17,11 +17,29 @@
 #'
 #' @return
 #' Data frame like \code{dat} but with additional columns containing stock
-#' status category information.
+#' status category information:
+#'
+#' \tabular{ll}{
+#' \code{trueCat4} \tab True Kobe category\cr
+#' \code{estCat4}  \tab Estimated Kobe category\cr
+#' \code{confMat4} \tab Comparison statistic:
+#'                      \code{4 * (trueCat4 - 1) + estCat4}\cr
+#' \code{trueCat3} \tab True SOFIA category\cr
+#' \code{estCat3}  \tab Estimated SOFIA category\cr
+#' \code{confMat3} \tab Comparison statistic:
+#'                      \code{4 * (trueCat3 - 1) + estCat3}
+#' }
 #'
 #' @note
-#' The data frame \code{dat} and the column names are created in \file{output.R}
-#' using results from the \emph{sraplus} analysis.
+#' The data frame \code{dat} and the \code{bbmsy.*} and \code{ffmsy.*} column
+#' names are created in \file{output.R} using results from the \emph{sraplus}
+#' analysis.
+#'
+#' In a simulation, the columns \code{bbmsy} and \code{ffmsy} contain the
+#' \emph{true} values from an operating model, while \code{bbmsy.*} and
+#' \code{ffmsy.*} contain the \emph{estimated} values. In a SOFIA analysis of
+#' actual data, only the estimated values are relevant and are used in the
+#' subsequent analysis and plots.
 #'
 #' This function calculates two sets of stock categories. \code{Cat3} has three
 #' levels and forms the basis of the SOFIA analysis, while \code{Cat4} has four
