@@ -11,13 +11,18 @@
 #' analyses.
 #'
 #' @details
+#' \emph{Prepare data:}
+#' \tabular{ll}{
+#'   \code{\link{addDriors}} \tab add driors column to stocks object\cr
+#'   \code{\link{addEffort}} \tab add effort column to catch data
+#' }
 #' \emph{Calculate:}
 #' \tabular{ll}{
-#'   \code{\link{compCat}} \tab stock status categories
+#'   \code{\link{calcCat}} \tab stock status categories
 #' }
 #' \emph{Plot:}
 #' \tabular{ll}{
-#'   \code{\link{plotProp}} \tab summary of stock status categories
+#'   \code{\link{plotCat}} \tab summary of stock status categories
 #' }
 #'
 #' @author Rishi Sharma and Arni Magnusson.

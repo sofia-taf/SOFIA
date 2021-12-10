@@ -1,3 +1,3 @@
-# TSAF 1.0.0 (2021-11-27)
+# TSAF 1.0.0 (2021-12-10)
 
-* Initial release, with functions to calculate and plot stock status categories.
+* Initial release.
