@@ -24,8 +24,17 @@ to an existing data frame.
 }
 \details{
 The column names in \code{dat} should contain the \code{method} name as a
-suffix. For example, if \code{method = "effEdepP"}, then this function will
-look for columns called \code{bbmsy.effEdepP} and \code{ffmsy.effEdepP}.
+suffix. For example, if \code{method = "effEdepP"} (Effective Effort and
+Depletion Prior), then this function will look for columns called
+\code{bbmsy.effEdepP} and \code{ffmsy.effEdepP}.
+}
+\note{
+The data frame \code{dat} and the column names are created in \file{output.R}
+using results from the \emph{sraplus} analysis.
+
+This function calculates two sets of stock categories. \code{Cat3} has three
+levels and forms the basis of the SOFIA analysis, while \code{Cat4} has four
+levels corresponding to the different rectangles of a Kobe plot.
 }
 \examples{
 \dontrun{

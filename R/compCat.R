@@ -11,15 +11,21 @@
 #'
 #' @details
 #' The column names in \code{dat} should contain the \code{method} name as a
-#' suffix. For example, if \code{method = "effEdepP"} (Effective Effort and Depletion Prior), then this function will
-#' look for columns called \code{bbmsy.effEdepP} and \code{ffmsy.effEdepP}.
+#' suffix. For example, if \code{method = "effEdepP"} (Effective Effort and
+#' Depletion Prior), then this function will look for columns called
+#' \code{bbmsy.effEdepP} and \code{ffmsy.effEdepP}.
 #'
 #' @return
 #' Data frame like \code{dat} but with additional columns containing stock
 #' status category information.
-#' 
+#'
 #' @note
-#' The data frame dat comes from the output module run and naming convention of method should match that
+#' The data frame \code{dat} and the column names are created in \file{output.R}
+#' using results from the \emph{sraplus} analysis.
+#'
+#' This function calculates two sets of stock categories. \code{Cat3} has three
+#' levels and forms the basis of the SOFIA analysis, while \code{Cat4} has four
+#' levels corresponding to the different rectangles of a Kobe plot.
 #'
 #' @author Rishi Sharma, with a contribution by Arni Magnusson.
 #'
