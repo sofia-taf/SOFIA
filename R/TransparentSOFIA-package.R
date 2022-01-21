@@ -1,14 +1,13 @@
 #' @docType package
 #'
-#' @name TSAF-package
+#' @name TransparentSOFIA-package
 #'
-#' @aliases TSAF
+#' @aliases TransparentSOFIA
 #'
-#' @title Tools to Work with SOFIA-TSAF Analyses
+#' @title Tools to Work with SOFIA Analyses
 #'
 #' @description
-#' Tools that support the Transparent SOFIA Assessment Framework (TSAF)
-#' analyses.
+#' Tools that support the Transparent SOFIA framework.
 #'
 #' @details
 #' \emph{Prepare data:}
@@ -28,10 +27,10 @@
 #' @author Rishi Sharma and Arni Magnusson.
 #'
 #' @references
-#' \url{https://github.com/sofia-tsaf/TSAF}
+#' \url{https://github.com/sofia-tsaf/TransparentSOFIA}
 #'
 #' @seealso
-#' \pkg{TSAF} is used in combination with the packages \pkg{sraplus} (analytical
-#' model) and \pkg{TAF} (workflow).
+#' \pkg{TransparentSOFIA} is used in combination with the packages \pkg{sraplus}
+#' (analytical model) and \pkg{TAF} (workflow).
 
 NA

@@ -1,14 +1,13 @@
-Package: TSAF
-Version: 1.0.0
-Date: 2021-12-10
-Title: Tools to Work with SOFIA-TSAF Analyses
+Package: TransparentSOFIA
+Version: 1.0.1
+Date: 2022-01-21
+Title: Tools to Work with SOFIA Analyses
 Authors@R: c(person("Rishi", "Sharma", role="aut"),
              person("Arni", "Magnusson", role=c("aut","cre"), email="thisisarni@gmail.com"))
 Imports: stats, ggplot2, sraplus
-Description: Tools that support the Transparent SOFIA Assessment Framework
-  (TSAF) analyses.
+Description: Tools that support the Transparent SOFIA framework.
 License: GPL-3
-URL: https://github.com/sofia-tsaf/TSAF
+URL: https://github.com/sofia-tsaf/TransparentSOFIA
 Encoding: UTF-8
 RoxygenNote: 7.1.2
 Roxygen: list(old_usage=TRUE)

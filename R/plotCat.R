@@ -28,7 +28,7 @@
 #'
 #' \code{\link{calcCat}} calculates stock status categories.
 #'
-#' \code{\link{TSAF-package}} gives an overview of the package.
+#' \code{\link{TransparentSOFIA-package}} gives an overview of the package.
 #'
 #' @examples
 #' \dontrun{
@@ -83,7 +83,7 @@ plotCat <- function(dat, method="cmsy.naive", cats=4, type="prop")
 
 #' @export
 
-## plotProp() was an older name for plotCat() that was used in many TSAF
+## plotProp() was an older name for plotCat() that was used in earlier SOFIA
 ## scripts, so we provide historical support.
 
 plotProp <- function(...)

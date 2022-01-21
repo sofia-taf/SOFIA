@@ -33,7 +33,7 @@
 #'
 #' \code{\link{addEffort}} adds an effort column to catch data.
 #'
-#' \code{\link{TSAF-package}} gives an overview of the package.
+#' \code{\link{TransparentSOFIA-package}} gives an overview of the package.
 #'
 #' @examples
 #' \dontrun{

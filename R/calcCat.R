@@ -50,7 +50,7 @@
 #' @seealso
 #' \code{\link{plotCat}} plots a summary of stock status categories.
 #'
-#' \code{\link{TSAF-package}} gives an overview of the package.
+#' \code{\link{TransparentSOFIA-package}} gives an overview of the package.
 #'
 #' @examples
 #' \dontrun{
@@ -85,8 +85,8 @@ calcCat <- function(dat, method="cmsy.naive")
 
 #' @export
 
-## compCat() was an older name for calcCat() that was used in many TSAF scripts,
-## so we provide historical support.
+## compCat() was an older name for calcCat() that was used in earlier SOFIA
+## scripts, so we provide historical support.
 
 compCat <- function(...)
 {

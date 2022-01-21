@@ -46,7 +46,7 @@ plotCat(newResTab, method="effEdepP", cats=3, type="all")
 
 \code{\link{calcCat}} calculates stock status categories.
 
-\code{\link{TSAF-package}} gives an overview of the package.
+\code{\link{TransparentSOFIA-package}} gives an overview of the package.
 }
 \author{
 Rishi Sharma, with a contribution by Arni Magnusson.
