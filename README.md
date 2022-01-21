@@ -1,7 +1,7 @@
 TransparentSOFIA
 ================
 
-TransparentSOFIA provides tools that support the SOFIA analyses.
+The TransparentSOFIA package provides tools that support the SOFIA analyses.
 
 Installation
 ------------
