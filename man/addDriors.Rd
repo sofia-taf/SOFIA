@@ -55,7 +55,7 @@ addDriors(stocks, priors, stocks.combined=FALSE)
 
 \code{\link{addEffort}} adds an effort column to catch data.
 
-\code{\link{TransparentSOFIA-package}} gives an overview of the package.
+\code{\link{SOFIA-package}} gives an overview of the package.
 }
 \author{
 Arni Magnusson.

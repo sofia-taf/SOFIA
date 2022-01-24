@@ -50,7 +50,7 @@
 #' @seealso
 #' \code{\link{plotCat}} plots a summary of stock status categories.
 #'
-#' \code{\link{TransparentSOFIA-package}} gives an overview of the package.
+#' \code{\link{SOFIA-package}} gives an overview of the package.
 #'
 #' @examples
 #' \dontrun{

@@ -28,7 +28,7 @@
 #'
 #' \code{\link{calcCat}} calculates stock status categories.
 #'
-#' \code{\link{TransparentSOFIA-package}} gives an overview of the package.
+#' \code{\link{SOFIA-package}} gives an overview of the package.
 #'
 #' @examples
 #' \dontrun{

@@ -1,8 +1,8 @@
 #' @docType package
 #'
-#' @name TransparentSOFIA-package
+#' @name SOFIA-package
 #'
-#' @aliases TransparentSOFIA
+#' @aliases SOFIA
 #'
 #' @title Tools to Work with SOFIA Analyses
 #'
@@ -27,10 +27,10 @@
 #' @author Rishi Sharma and Arni Magnusson.
 #'
 #' @references
-#' \url{https://github.com/sofia-tsaf/TransparentSOFIA}
+#' \url{https://github.com/sofia-tsaf/SOFIA}
 #'
 #' @seealso
-#' \pkg{TransparentSOFIA} is used in combination with the packages \pkg{sraplus}
+#' \pkg{SOFIA} is used in combination with the packages \pkg{sraplus}
 #' (analytical model) and \pkg{TAF} (workflow).
 
 NA

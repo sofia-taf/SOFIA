@@ -1,17 +1,16 @@
-TransparentSOFIA
-================
+SOFIA
+=====
 
-The TransparentSOFIA package provides tools that support the SOFIA analyses.
+The SOFIA package provides tools that support the Transparent SOFIA framework.
 
 Installation
 ------------
 
-TransparentSOFIA can be installed from GitHub using the `install_github`
-command:
+SOFIA can be installed from GitHub using the `install_github` command:
 
 ```R
 library(remotes)
-install_github("sofia-tsaf/TransparentSOFIA")
+install_github("sofia-tsaf/SOFIA")
 ```
 
 Usage
@@ -20,16 +19,14 @@ Usage
 For a summary of the package:
 
 ```R
-library(TransparentSOFIA)
-?TransparentSOFIA
+library(SOFIA)
+?SOFIA
 ```
 
 Development
 -----------
 
-TransparentSOFIA is developed openly on
-[GitHub](https://github.com/sofia-tsaf/TransparentSOFIA).
+SOFIA is developed openly on [GitHub](https://github.com/sofia-tsaf/SOFIA).
 
-Feel free to open an
-[issue](https://github.com/sofia-tsaf/TransparentSOFIA/issues) there if you
-encounter problems or have suggestions for future versions.
+Feel free to open an [issue](https://github.com/sofia-tsaf/SOFIA/issues) there
+if you encounter problems or have suggestions for future versions.

@@ -26,7 +26,7 @@
 #'
 #' \code{\link{addDriors}} adds a driors column to stocks.
 #'
-#' \code{\link{TransparentSOFIA-package}} gives an overview of the package.
+#' \code{\link{SOFIA-package}} gives an overview of the package.
 #'
 #' @examples
 #' \dontrun{
