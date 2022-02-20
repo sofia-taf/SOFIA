@@ -1,10 +1,10 @@
 Package: SOFIA
-Version: 1.0.3
-Date: 2022-02-14
+Version: 1.1.0
+Date: 2022-02-20
 Title: Tools to Work with SOFIA Analyses
 Authors@R: c(person("Rishi", "Sharma", role="aut"),
              person("Arni", "Magnusson", role=c("aut","cre"), email="thisisarni@gmail.com"))
-Imports: stats, ggplot2, sraplus
+Imports: stats, utils, ggplot2, sraplus
 Description: Tools that support the Transparent SOFIA framework.
 License: GPL-3
 URL: https://github.com/sofia-tsaf/SOFIA
