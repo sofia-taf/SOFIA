@@ -14,7 +14,7 @@
 #' \tabular{ll}{
 #'   \code{\link{addDriors}} \tab add driors column to stocks object\cr
 #'   \code{\link{addEffort}} \tab add effort column to catch data\cr
-#'   \code{\link{groupData}} \tab group primary data into directories
+#'   \code{\link{groupData}} \tab group primary data in subdirectories
 #' }
 #' \emph{Calculate:}
 #' \tabular{ll}{

@@ -16,8 +16,8 @@ Files are copied into subdirectories. As a byproduct, a list is returned,
 describing which subdirectories contain which data files.
 }
 \description{
-Group primary data files into subdirectories, depending on what columns each
-data file contains.
+Group primary single-stock data files in subdirectories, depending on what
+columns each data file contains.
 }
 \note{
 A primary data file can have a filename such as

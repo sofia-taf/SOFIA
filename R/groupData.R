@@ -1,7 +1,7 @@
 #' Group Data
 #'
-#' Group primary data files into subdirectories, depending on what columns each
-#' data file contains.
+#' Group primary single-stock data files in subdirectories, depending on what
+#' columns each data file contains.
 #'
 #' @param dir is the directory containing the primary data files.
 #' @param quiet is whether to suppress screen output.
