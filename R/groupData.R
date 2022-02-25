@@ -15,8 +15,6 @@
 #' Files are copied into subdirectories. As a byproduct, a list is returned,
 #' describing which subdirectories contain which data files.
 #'
-#' @author Arni Magnusson.
-#'
 #' @note
 #' A primary data file can have a filename such as
 #' \file{Yellowtail_snapper_Mexico.csv} and columns such as
@@ -44,6 +42,8 @@
 #'   both + (effort-both) + (index-both) + neither
 #' }
 #'
+#' @author Arni Magnusson.
+#'
 #' @seealso
 #' \code{\link{SOFIA-package}} gives an overview of the package.
 #'
@@ -64,6 +64,12 @@ groupData <- function(dir, quiet=FALSE)
 
   ## 1  Import CSV files
   files <- dir(dir, pattern="\\.csv$", full=TRUE)
+  if(length(files) == 0)
+  {
+    if(!quiet)
+      message("No CSV files found in '", dir, "'")
+    return()
+  }
   csv <- lapply(files, read.csv)
   names(csv) <- basename(files)
 
