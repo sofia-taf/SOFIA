@@ -1,6 +1,17 @@
+# SOFIA 1.2.0 (2022-02-25)
+
+* Added function convertData() to convert primary data to combined data.
+
+* Improved groupData() so it exits gracefully when no CSV files are found.
+  Furthermore, it always creates a new set of empty subdirectories for the
+  output before copying files.
+
+
+
+
 # SOFIA 1.1.0 (2022-02-20)
 
-* Added function groupData() to group primary data into subdirectories.
+* Added function groupData() to group primary data in subdirectories.
 
 
 

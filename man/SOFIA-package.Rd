@@ -11,9 +11,10 @@ Tools that support the Transparent SOFIA framework.
 \details{
 \emph{Prepare data:}
 \tabular{ll}{
-  \code{\link{addDriors}} \tab add driors column to stocks object\cr
-  \code{\link{addEffort}} \tab add effort column to catch data\cr
-  \code{\link{groupData}} \tab group primary data in subdirectories
+  \code{\link{addDriors}}   \tab add driors column to stocks object\cr
+  \code{\link{addEffort}}   \tab add effort column to catch data\cr
+  \code{\link{convertData}} \tab convert primary data to combined data\cr
+  \code{\link{groupData}}   \tab group primary data in subdirectories
 }
 \emph{Calculate:}
 \tabular{ll}{

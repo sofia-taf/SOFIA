@@ -37,9 +37,14 @@
 #'   both + (effort-both) + (index-both) + neither
 #' }
 #'
+#' The functions \code{groupData} and \code{convertData} are used together:
+#' first group, then convert.
+#'
 #' @author Arni Magnusson.
 #'
 #' @seealso
+#' \code{\link{convertData}} converts primary data to combined data.
+#'
 #' \code{\link{SOFIA-package}} gives an overview of the package.
 #'
 #' @examples

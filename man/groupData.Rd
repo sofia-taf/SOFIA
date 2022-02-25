@@ -45,6 +45,9 @@ be:
 \preformatted{
   both + (effort-both) + (index-both) + neither
 }
+
+The functions \code{groupData} and \code{convertData} are used together:
+first group, then convert.
 }
 \examples{
 \dontrun{
@@ -54,6 +57,8 @@ groupData("Data_files_Area_31_3", quiet=TRUE)
 
 }
 \seealso{
+\code{\link{convertData}} converts primary data to combined data.
+
 \code{\link{SOFIA-package}} gives an overview of the package.
 }
 \author{
