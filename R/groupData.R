@@ -6,11 +6,6 @@
 #' @param dir is the directory containing the primary data files.
 #' @param quiet is whether to suppress screen output.
 #'
-#' @details
-#' If \code{quiet = FALSE} then warnings are raised if the output subdirectories
-#' exist already. Generally, the output subdirectories should not exist before
-#' this function is called.
-#'
 #' @return
 #' Files are copied into subdirectories. As a byproduct, a list is returned,
 #' describing which subdirectories contain which data files.
@@ -74,10 +69,11 @@ groupData <- function(dir, quiet=FALSE)
   names(csv) <- basename(files)
 
   ## 2  Create directories
-  dir.create(file.path(dir, "both"), showWarnings=!quiet)
-  dir.create(file.path(dir, "effort"), showWarnings=!quiet)
-  dir.create(file.path(dir, "index"), showWarnings=!quiet)
-  dir.create(file.path(dir, "neither"), showWarnings=!quiet)
+  unlink(file.path(dir, c("both","effort","index","neither")), recursive=TRUE)
+  dir.create(file.path(dir, "both"))
+  dir.create(file.path(dir, "effort"))
+  dir.create(file.path(dir, "index"))
+  dir.create(file.path(dir, "neither"))
 
   ## 3  Copy files into directories
   for(i in seq_along(files))

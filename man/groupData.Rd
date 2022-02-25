@@ -19,11 +19,6 @@ describing which subdirectories contain which data files.
 Group primary data files into subdirectories, depending on what columns each
 data file contains.
 }
-\details{
-If \code{quiet = FALSE} then warnings are raised if the output subdirectories
-exist already. Generally, the output subdirectories should not exist before
-this function is called.
-}
 \note{
 A primary data file can have a filename such as
 \file{Yellowtail_snapper_Mexico.csv} and columns such as
