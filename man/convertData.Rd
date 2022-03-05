@@ -7,12 +7,12 @@
 convertData(subdir, min.catch = 0.001, quiet = FALSE)
 }
 \arguments{
-\item{subdir}{is a directory containing the primary data files.}
+\item{subdir}{directory containing the primary data files.}
 
-\item{min.catch}{is a small numeric constant to use instead of \code{NA} or
-zero catches.}
+\item{min.catch}{small numeric constant to use instead of \code{NA} or zero
+catches.}
 
-\item{quiet}{is whether to suppress screen output.}
+\item{quiet}{whether to suppress screen output.}
 }
 \value{
 Files are converted inside \code{subdir}. As a byproduct, a list is returned,

@@ -7,9 +7,9 @@
 groupData(dir, quiet = FALSE)
 }
 \arguments{
-\item{dir}{is the directory containing the primary data files.}
+\item{dir}{directory containing the primary data files.}
 
-\item{quiet}{is whether to suppress screen output.}
+\item{quiet}{whether to suppress screen output.}
 }
 \value{
 Files are copied into subdirectories. As a byproduct, a list is returned,

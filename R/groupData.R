@@ -3,8 +3,8 @@
 #' Group primary single-stock data files in subdirectories, depending on what
 #' columns each data file contains.
 #'
-#' @param dir is the directory containing the primary data files.
-#' @param quiet is whether to suppress screen output.
+#' @param dir directory containing the primary data files.
+#' @param quiet whether to suppress screen output.
 #'
 #' @return
 #' Files are copied into subdirectories. As a byproduct, a list is returned,

@@ -4,10 +4,10 @@
 #' analysis, such \code{catches.csv}, \code{effort.csv}, and/or
 #' \code{indices.csv}.
 #'
-#' @param subdir is a directory containing the primary data files.
-#' @param min.catch is a small numeric constant to use instead of \code{NA} or
-#'        zero catches.
-#' @param quiet is whether to suppress screen output.
+#' @param subdir directory containing the primary data files.
+#' @param min.catch small numeric constant to use instead of \code{NA} or zero
+#'        catches.
+#' @param quiet whether to suppress screen output.
 #'
 #' @details
 #' \code{subdir} is usually one of \code{"both"}, \code{"effort"},
