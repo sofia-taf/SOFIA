@@ -51,6 +51,7 @@
 #' }
 #'
 #' @importFrom utils read.csv
+#' @importFrom TAF write.taf
 #'
 #' @export
 
