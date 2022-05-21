@@ -6,14 +6,16 @@
 #'        \code{capture}.
 #' @param effort \code{tibble} containing \code{year}, \code{stock}, and
 #'        \code{effort}.
-#' @param stocks.combined whether to use the same effort data for all stocks.
+#' @param same.effort whether to use the same effort data for all stocks.
+#' @param stocks.combined old name for \code{same.effort}, provided for backward
+#'        compatibility. Use \code{same.effort} in new SOFIA scripts.
 #'
 #' @details
-#' If \code{stocks.combined = TRUE} then the effort data for \code{stock$All} is
+#' If \code{same.effort = TRUE} then the effort data for \code{stock$All} is
 #' used for all stocks.
 #'
-#' If \code{stocks.combined = FALSE} then the catch and effort data are paired
-#' by year and stock.
+#' If \code{same.effort = FALSE} then the catch and effort data are paired by
+#' year and stock.
 #'
 #' @return
 #' Data frame like \code{catch} but with the additional column \code{effort}.
@@ -30,15 +32,19 @@
 #'
 #' @examples
 #' \dontrun{
-#' addEffort(catch, effort, stocks.combined=TRUE)
-#' addEffort(catch, effort, stocks.combined=FALSE)
+#' addEffort(catch, effort, same.effort=TRUE)
+#' addEffort(catch, effort, same.effort=FALSE)
 #' }
 #'
 #' @export
 
-addEffort <- function(catch, effort, stocks.combined)
+addEffort <- function(catch, effort, same.effort=stocks.combined,
+                      stocks.combined)
 {
-  x <- if(stocks.combined)
+  if(missing(same.effort) && missing(stocks.combined))
+    stop("argument 'same.effort' is missing")
+
+  x <- if(same.effort)
          merge(catch, effort[effort$stock=="All",c("year","effort")], by="year",
                all.x=TRUE, sort=FALSE)
        else

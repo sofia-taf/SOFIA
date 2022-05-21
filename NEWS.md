@@ -1,3 +1,16 @@
+# SOFIA 1.2.1 (2022-05-22)
+
+* Renamed argument 'stocks.combined' to 'same.priors' in addDriors().
+
+* Renamed argument 'stocks.combined' to 'same.effort' in addEffort().
+
+* The old argument name 'stocks.combined' is still supported in both addDriors()
+  and addEffort() for backward compatibility. The new argument names
+  'same.priors' and 'same.effort' should be used in new SOFIA scripts.
+
+
+
+
 # SOFIA 1.2.0 (2022-02-25)
 
 * Added function convertData() to convert primary data to combined data.

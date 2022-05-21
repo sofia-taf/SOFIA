@@ -4,7 +4,7 @@
 \alias{addEffort}
 \title{Add Effort}
 \usage{
-addEffort(catch, effort, stocks.combined)
+addEffort(catch, effort, same.effort = stocks.combined, stocks.combined)
 }
 \arguments{
 \item{catch}{\code{tibble} containing \code{year}, \code{stock}, and
@@ -13,7 +13,10 @@ addEffort(catch, effort, stocks.combined)
 \item{effort}{\code{tibble} containing \code{year}, \code{stock}, and
 \code{effort}.}
 
-\item{stocks.combined}{whether to use the same effort data for all stocks.}
+\item{same.effort}{whether to use the same effort data for all stocks.}
+
+\item{stocks.combined}{old name for \code{same.effort}, provided for backward
+compatibility. Use \code{same.effort} in new SOFIA scripts.}
 }
 \value{
 Data frame like \code{catch} but with the additional column \code{effort}.
@@ -22,16 +25,16 @@ Data frame like \code{catch} but with the additional column \code{effort}.
 Add effort column to catch data.
 }
 \details{
-If \code{stocks.combined = TRUE} then the effort data for \code{stock$All} is
+If \code{same.effort = TRUE} then the effort data for \code{stock$All} is
 used for all stocks.
 
-If \code{stocks.combined = FALSE} then the catch and effort data are paired
-by year and stock.
+If \code{same.effort = FALSE} then the catch and effort data are paired by
+year and stock.
 }
 \examples{
 \dontrun{
-addEffort(catch, effort, stocks.combined=TRUE)
-addEffort(catch, effort, stocks.combined=FALSE)
+addEffort(catch, effort, same.effort=TRUE)
+addEffort(catch, effort, same.effort=FALSE)
 }
 
 }

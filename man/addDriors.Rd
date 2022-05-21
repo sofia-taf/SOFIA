@@ -4,9 +4,9 @@
 \alias{addDriors}
 \title{Add Driors}
 \usage{
-addDriors(stocks, priors, stocks.combined, shape_prior = 2,
-  b_ref_type = "k", growth_rate_prior = NA, growth_rate_prior_cv = 0.2,
-  ...)
+addDriors(stocks, priors, same.priors = stocks.combined, stocks.combined,
+  shape_prior = 2, b_ref_type = "k", growth_rate_prior = NA,
+  growth_rate_prior_cv = 0.2, ...)
 }
 \arguments{
 \item{stocks}{\code{tibble} containing \code{stock}, \code{taxa}, and
@@ -16,7 +16,10 @@ addDriors(stocks, priors, stocks.combined, shape_prior = 2,
 \code{initial_state_cv}, \code{terminal_state}, and
 \code{terminal_state_cv}.}
 
-\item{stocks.combined}{whether to use the same priors for all stocks.}
+\item{same.priors}{whether to use the same priors for all stocks.}
+
+\item{stocks.combined}{old name for \code{same.prior}, provided for backward
+compatibility. Use \code{same.prior} in new SOFIA scripts.}
 
 \item{shape_prior}{passed to \code{format_driors}.}
 
@@ -36,16 +39,16 @@ A \code{tibble} like \code{stocks} but with the additional column
 Add driors (data and priors) column to \sQuote{stocks} object.
 }
 \details{
-If \code{stocks.combined = TRUE} then the priors where \code{stock = All} are
+If \code{same.priors = TRUE} then the priors where \code{stock = All} are
 used for all stocks.
 
-If \code{stocks.combined = FALSE} then the priors are read from
-stock-specific rows in the \code{priors} data frame.
+If \code{same.priors = FALSE} then the priors are read from stock-specific
+rows in the \code{priors} data frame.
 }
 \examples{
 \dontrun{
-addDriors(stocks, priors, stocks.combined=TRUE)
-addDriors(stocks, priors, stocks.combined=FALSE)
+addDriors(stocks, priors, same.priors=TRUE)
+addDriors(stocks, priors, same.priors=FALSE)
 }
 
 }
