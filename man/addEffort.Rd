@@ -15,7 +15,7 @@ addEffort(catch, effort, same.effort = stocks.combined, stocks.combined)
 
 \item{same.effort}{whether to use the same effort data for all stocks.}
 
-\item{stocks.combined}{old name for \code{same.effort}, provided for backward
+\item{stocks.combined}{old name for \code{same.effort} provided for backward
 compatibility. Use \code{same.effort} in new SOFIA scripts.}
 }
 \value{

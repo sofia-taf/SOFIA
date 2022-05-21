@@ -8,7 +8,7 @@
 #'        \code{initial_state_cv}, \code{terminal_state}, and
 #'        \code{terminal_state_cv}.
 #' @param same.priors whether to use the same priors for all stocks.
-#' @param stocks.combined old name for \code{same.prior}, provided for backward
+#' @param stocks.combined old name for \code{same.prior} provided for backward
 #'        compatibility. Use \code{same.prior} in new SOFIA scripts.
 #' @param shape_prior passed to \code{format_driors}.
 #' @param b_ref_type passed to \code{format_driors}.

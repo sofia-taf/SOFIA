@@ -18,7 +18,7 @@ addDriors(stocks, priors, same.priors = stocks.combined, stocks.combined,
 
 \item{same.priors}{whether to use the same priors for all stocks.}
 
-\item{stocks.combined}{old name for \code{same.prior}, provided for backward
+\item{stocks.combined}{old name for \code{same.prior} provided for backward
 compatibility. Use \code{same.prior} in new SOFIA scripts.}
 
 \item{shape_prior}{passed to \code{format_driors}.}

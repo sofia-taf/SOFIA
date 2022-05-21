@@ -7,7 +7,7 @@
 #' @param effort \code{tibble} containing \code{year}, \code{stock}, and
 #'        \code{effort}.
 #' @param same.effort whether to use the same effort data for all stocks.
-#' @param stocks.combined old name for \code{same.effort}, provided for backward
+#' @param stocks.combined old name for \code{same.effort} provided for backward
 #'        compatibility. Use \code{same.effort} in new SOFIA scripts.
 #'
 #' @details
