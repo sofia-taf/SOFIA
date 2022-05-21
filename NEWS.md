@@ -1,4 +1,4 @@
-# SOFIA 1.2.1 (2022-05-22)
+# SOFIA 1.2.1 (2022-05-21)
 
 * Renamed argument 'stocks.combined' to 'same.priors' in addDriors().
 
