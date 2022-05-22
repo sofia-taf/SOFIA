@@ -4,6 +4,8 @@
 
 * Added errors and warnings if stock names in catch/effort/priors don't match.
 
+* plotCat() treats the first two columns as 'stock' and 'year'.
+
 
 
 

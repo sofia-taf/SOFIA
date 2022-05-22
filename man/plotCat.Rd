@@ -30,8 +30,11 @@ Plot a summary of stock status categories by year: underfished (green), fully
 fished (yellow), or overfished (red).
 }
 \details{
-The column names in \code{dat} should contain the \code{method} name as a
-suffix. For example, if \code{method = "effEdepP"}, then this function will
+The first two columns in \code{dat} are treated as \code{'stock'} and
+\code{'year'}, regardless of the actual column names.
+
+The last column names in \code{dat} should contain the \code{method} name as
+a suffix. For example, if \code{method = "effEdepP"}, then this function will
 look for columns called \code{bbmsy.effEdepP} and \code{ffmsy.effEdepP}.
 }
 \examples{

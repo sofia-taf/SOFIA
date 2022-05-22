@@ -15,8 +15,11 @@
 #'        \code{"all"}.
 #'
 #' @details
-#' The column names in \code{dat} should contain the \code{method} name as a
-#' suffix. For example, if \code{method = "effEdepP"}, then this function will
+#' The first two columns in \code{dat} are treated as \code{'stock'} and
+#' \code{'year'}, regardless of the actual column names.
+#'
+#' The last column names in \code{dat} should contain the \code{method} name as
+#' a suffix. For example, if \code{method = "effEdepP"}, then this function will
 #' look for columns called \code{bbmsy.effEdepP} and \code{ffmsy.effEdepP}.
 #'
 #' @return A \code{ggplot} object.
@@ -45,12 +48,14 @@
 
 plotCat <- function(dat, method="cmsy.naive", cats=4, type="prop")
 {
+  names(dat)[1:2] <- c("stock", "year")  # convert Stock->stock, yr->year
+
   txt3 <- c("b>1.2", "0.8<b<1.2", "b<0.8")
   txt4 <- c("b>1,f<1", "b>1,f>1", "b<1,f<1", "b<1,f>1")
 
   ## Create a new data frame with the categories
   tDat <- calcCat(dat, method=method)
-  tDat <- tDat[, c("Stock", "yr", "estCat3", "estCat4")]
+  tDat <- tDat[, c("stock", "year", "estCat3", "estCat4")]
 
   if(cats == 3)
   {
@@ -67,14 +72,14 @@ plotCat <- function(dat, method="cmsy.naive", cats=4, type="prop")
   ## (use aes_string to avoid R CMD check notes)
   if(type == "prop")
   {
-    ggplot(data=tDat, aes_string(x="yr", color="estCat")) +
+    ggplot(data=tDat, aes_string(x="year", color="estCat")) +
       geom_bar(aes_string(fill="estCat"), width=0.5) +
       theme_minimal() +
       scale_fill_manual(values=cols)
   }
   else if(type == "all")
   {
-    ggplot(tDat, aes_string(x="yr", y="Stock", fill="estCat")) +
+    ggplot(tDat, aes_string(x="year", y="stock", fill="estCat")) +
       geom_raster() +
       theme_minimal() +
       scale_fill_manual(values=cols)
