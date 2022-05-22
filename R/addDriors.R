@@ -58,6 +58,8 @@ addDriors <- function(stocks, priors, same.priors=stocks.combined,
   driors <- list()
   for(i in seq_len(nrow(stocks)))
   {
+    if(same.priors && !("All" %in% priors$stock))
+      stop("using same.priors=TRUE, so priors table must contain stock='All'")
     ## p is the row number for the priors data frame
     p <- if(same.priors) match("All", priors$stock)
          else match(stocks$stock[i], priors$stock)

@@ -44,6 +44,9 @@ addEffort <- function(catch, effort, same.effort=stocks.combined,
   if(missing(same.effort) && missing(stocks.combined))
     stop("argument 'same.effort' is missing")
 
+  if(same.effort && !("All" %in% effort$stock))
+    stop("using same.effort=TRUE, so effort table must contain stock='All'")
+
   x <- if(same.effort)
          merge(catch, effort[effort$stock=="All",c("year","effort")], by="year",
                all.x=TRUE, sort=FALSE)
