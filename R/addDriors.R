@@ -8,8 +8,6 @@
 #'        \code{initial_state_cv}, \code{terminal_state}, and
 #'        \code{terminal_state_cv}.
 #' @param same.priors whether to use the same priors for all stocks.
-#' @param stocks.combined old name for \code{same.prior} provided for backward
-#'        compatibility. Use \code{same.prior} in new SOFIA scripts.
 #' @param shape_prior passed to \code{format_driors}.
 #' @param b_ref_type passed to \code{format_driors}.
 #' @param growth_rate_prior passed to \code{format_driors}.
@@ -48,19 +46,15 @@
 #'
 #' @export
 
-addDriors <- function(stocks, priors, same.priors=stocks.combined,
-                      stocks.combined, shape_prior=2, b_ref_type="k",
-                      growth_rate_prior=NA, growth_rate_prior_cv=0.2, ...)
+addDriors <- function(stocks, priors, same.priors, shape_prior=2,
+                      b_ref_type="k", growth_rate_prior=NA,
+                      growth_rate_prior_cv=0.2, ...)
 {
-  ## 1a  Make sure user passed same.priors
-  if(missing(same.priors) && missing(stocks.combined))
-    stop("argument 'same.priors' is missing")
-
-  ## 1b  Make sure priors table contains stock 'All' if same.priors=TRUE
+  ## 1a  Make sure priors table contains stock 'All' if same.priors=TRUE
   if(same.priors && !("All" %in% priors$stock))
     stop("using same.priors=TRUE, so priors table must contain stock='All'")
 
-  ## 1c  Make sure catch and priors have matching stocks if same.priors=FALSE
+  ## 1b  Make sure catch and priors have matching stocks if same.priors=FALSE
   cstocks <- sort(unique(catch$stock))
   pstocks <- sort(prior$stock)
   if(!same.priors && !any(cstocks %in% pstocks))

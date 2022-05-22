@@ -1,3 +1,12 @@
+# SOFIA 2.0.0 (2022-05-22)
+
+* Dropped legacy support for 'stocks.combined' in addDriors() and addEffort().
+
+* Added errors and warnings if stock names in catch/effort/priors don't match.
+
+
+
+
 # SOFIA 1.2.1 (2022-05-21)
 
 * Renamed argument 'stocks.combined' to 'same.priors' in addDriors().

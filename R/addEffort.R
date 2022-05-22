@@ -7,8 +7,6 @@
 #' @param effort \code{tibble} containing \code{year}, \code{stock}, and
 #'        \code{effort}.
 #' @param same.effort whether to use the same effort data for all stocks.
-#' @param stocks.combined old name for \code{same.effort} provided for backward
-#'        compatibility. Use \code{same.effort} in new SOFIA scripts.
 #'
 #' @details
 #' If \code{same.effort = TRUE} then the effort data for \code{stock$All} is
@@ -38,18 +36,13 @@
 #'
 #' @export
 
-addEffort <- function(catch, effort, same.effort=stocks.combined,
-                      stocks.combined)
+addEffort <- function(catch, effort, same.effort)
 {
-  ## 1a  Make sure user passed same.effort
-  if(missing(same.effort) && missing(stocks.combined))
-    stop("argument 'same.effort' is missing")
-
-  ## 1b  Make sure effort table contains stock 'All' if same.effort=TRUE
+  ## 1a  Make sure effort table contains stock 'All' if same.effort=TRUE
   if(same.effort && !("All" %in% effort$stock))
     stop("using same.effort=TRUE, so effort table must contain stock='All'")
 
-  ## 1c  Make sure catch and effort have matching stocks if same.effort=FALSE
+  ## 1b  Make sure catch and effort have matching stocks if same.effort=FALSE
   cstocks <- sort(unique(catch$stock))
   estocks <- sort(unique(effort$stock))
   if(!same.effort && !any(cstocks %in% estocks))

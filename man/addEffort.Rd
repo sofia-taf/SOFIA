@@ -4,7 +4,7 @@
 \alias{addEffort}
 \title{Add Effort}
 \usage{
-addEffort(catch, effort, same.effort = stocks.combined, stocks.combined)
+addEffort(catch, effort, same.effort)
 }
 \arguments{
 \item{catch}{\code{tibble} containing \code{year}, \code{stock}, and
@@ -14,9 +14,6 @@ addEffort(catch, effort, same.effort = stocks.combined, stocks.combined)
 \code{effort}.}
 
 \item{same.effort}{whether to use the same effort data for all stocks.}
-
-\item{stocks.combined}{old name for \code{same.effort} provided for backward
-compatibility. Use \code{same.effort} in new SOFIA scripts.}
 }
 \value{
 Data frame like \code{catch} but with the additional column \code{effort}.

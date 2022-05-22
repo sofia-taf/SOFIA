@@ -4,9 +4,8 @@
 \alias{addDriors}
 \title{Add Driors}
 \usage{
-addDriors(stocks, priors, same.priors = stocks.combined, stocks.combined,
-  shape_prior = 2, b_ref_type = "k", growth_rate_prior = NA,
-  growth_rate_prior_cv = 0.2, ...)
+addDriors(stocks, priors, same.priors, shape_prior = 2, b_ref_type = "k",
+  growth_rate_prior = NA, growth_rate_prior_cv = 0.2, ...)
 }
 \arguments{
 \item{stocks}{\code{tibble} containing \code{stock}, \code{taxa}, and
@@ -17,9 +16,6 @@ addDriors(stocks, priors, same.priors = stocks.combined, stocks.combined,
 \code{terminal_state_cv}.}
 
 \item{same.priors}{whether to use the same priors for all stocks.}
-
-\item{stocks.combined}{old name for \code{same.prior} provided for backward
-compatibility. Use \code{same.prior} in new SOFIA scripts.}
 
 \item{shape_prior}{passed to \code{format_driors}.}
 
