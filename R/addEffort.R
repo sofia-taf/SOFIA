@@ -41,12 +41,24 @@
 addEffort <- function(catch, effort, same.effort=stocks.combined,
                       stocks.combined)
 {
+  ## 1a  Make sure user passed same.effort
   if(missing(same.effort) && missing(stocks.combined))
     stop("argument 'same.effort' is missing")
 
+  ## 1b  Make sure effort table contains stock 'All' if same.effort=TRUE
   if(same.effort && !("All" %in% effort$stock))
     stop("using same.effort=TRUE, so effort table must contain stock='All'")
 
+  ## 1c  Make sure catch and effort have matching stocks if same.effort=FALSE
+  cstocks <- sort(unique(catch$stock))
+  estocks <- sort(unique(effort$stock))
+  if(!same.effort && !any(cstocks %in% estocks))
+    stop("using same.effort=FALSE, so stocks in 'effort' should match 'catch'")
+  if(!same.effort && !all(cstocks %in% estocks))
+    warning("using same.effort=FALSE, but ", sum(!(cstocks %in% estocks)),
+            " stock(s) in 'catch' not found in 'effort'")
+
+  ## 2  Merge and sort
   x <- if(same.effort)
          merge(catch, effort[effort$stock=="All",c("year","effort")], by="year",
                all.x=TRUE, sort=FALSE)
