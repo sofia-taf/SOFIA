@@ -55,13 +55,13 @@ addDriors <- function(stocks, priors, same.priors, shape_prior=2,
     stop("using same.priors=TRUE, so priors table must contain stock='All'")
 
   ## 1b  Make sure catch and priors have matching stocks if same.priors=FALSE
-  cstocks <- sort(unique(catch$stock))
-  pstocks <- sort(prior$stock)
-  if(!same.priors && !any(cstocks %in% pstocks))
-    stop("using same.priors=FALSE, so stocks in 'priors' should match 'catch'")
-  if(!same.priors && !all(cstocks %in% pstocks))
-    warning("using same.priors=FALSE, but ", sum(!(cstocks %in% pstocks)),
-            " stock(s) in 'catch' not found in 'priors' data")
+  sstocks <- sort(stocks$stock)
+  pstocks <- sort(priors$stock)
+  if(!same.priors && !any(sstocks %in% pstocks))
+    stop("using same.priors=FALSE, so stocks in 'priors' should match 'stocks'")
+  if(!same.priors && !all(sstocks %in% pstocks))
+    warning("using same.priors=FALSE, but ", sum(!(sstocks %in% pstocks)),
+            " stock(s) in 'stocks' not found in 'priors'")
 
   ## 2  Construct driors
   driors <- list()
