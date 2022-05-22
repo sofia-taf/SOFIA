@@ -4,7 +4,10 @@
 
 * Added errors and warnings if stock names in catch/effort/priors don't match.
 
-* plotCat() treats the first two columns as 'stock' and 'year'.
+* Improved plotCat() so it treats the first two columns of the input data frame
+  as stock and year.
+
+* Renamed plotCat() 'type' options to "count" and "stock".
 
 
 

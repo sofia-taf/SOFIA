@@ -11,8 +11,8 @@
 #' @param cats either \code{3} or \code{4}, indicating whether to plot the stock
 #'        status based on biomass only (3 categories) or based on biomass and
 #'        fishing mortality (4 categories).
-#' @param type string indicating the type of plot, either \code{"prop"} or
-#'        \code{"all"}.
+#' @param type string indicating the type of plot, either \code{"count"} or
+#'        \code{"stock"}.
 #'
 #' @details
 #' The first two columns in \code{dat} are treated as \code{'stock'} and
@@ -22,9 +22,12 @@
 #' a suffix. For example, if \code{method = "effEdepP"}, then this function will
 #' look for columns called \code{bbmsy.effEdepP} and \code{ffmsy.effEdepP}.
 #'
+#' The \code{type} argument supports legacy synonyms, where \code{"prop"} is the
+#' same as \code{"count"}, and \code{"all"} is the same as \code{"stock"}.
+#'
 #' @return A \code{ggplot} object.
 #'
-#' @author Rishi Sharma, with a contribution by Arni Magnusson.
+#' @author Rishi Sharma and Arni Magnusson.
 #'
 #' @seealso
 #' \code{\link{ggplot}} is the underlying function used to produce the plot.
@@ -35,8 +38,8 @@
 #'
 #' @examples
 #' \dontrun{
-#' plotCat(newResTab, method="effEdepP", cats=3, type="prop")
-#' plotCat(newResTab, method="effEdepP", cats=3, type="all")
+#' plotCat(newResTab, method="effEdepP", cats=3, type="count")
+#' plotCat(newResTab, method="effEdepP", cats=3, type="stock")
 #' }
 #'
 #' @aliases plotProp
@@ -46,7 +49,7 @@
 #'
 #' @export
 
-plotCat <- function(dat, method="cmsy.naive", cats=4, type="prop")
+plotCat <- function(dat, method="cmsy.naive", cats=4, type="count")
 {
   names(dat)[1:2] <- c("stock", "year")  # convert Stock->stock, yr->year
 
@@ -70,14 +73,14 @@ plotCat <- function(dat, method="cmsy.naive", cats=4, type="prop")
 
   ## Plot
   ## (use aes_string to avoid R CMD check notes)
-  if(type == "prop")
+  if(type == "count" || type == "prop")
   {
     ggplot(data=tDat, aes_string(x="year", color="estCat")) +
       geom_bar(aes_string(fill="estCat"), width=0.5) +
       theme_minimal() +
       scale_fill_manual(values=cols)
   }
-  else if(type == "all")
+  else if(type == "stock" || type == "all")
   {
     ggplot(tDat, aes_string(x="year", y="stock", fill="estCat")) +
       geom_raster() +

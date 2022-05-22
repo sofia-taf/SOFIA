@@ -5,7 +5,7 @@
 \alias{plotProp}
 \title{Plot Categories}
 \usage{
-plotCat(dat, method = "cmsy.naive", cats = 4, type = "prop")
+plotCat(dat, method = "cmsy.naive", cats = 4, type = "count")
 }
 \arguments{
 \item{dat}{data frame of stock time series, containing columns named
@@ -19,8 +19,8 @@ F/Fmsy.}
 status based on biomass only (3 categories) or based on biomass and
 fishing mortality (4 categories).}
 
-\item{type}{string indicating the type of plot, either \code{"prop"} or
-\code{"all"}.}
+\item{type}{string indicating the type of plot, either \code{"count"} or
+\code{"stock"}.}
 }
 \value{
 A \code{ggplot} object.
@@ -36,11 +36,14 @@ The first two columns in \code{dat} are treated as \code{'stock'} and
 The last column names in \code{dat} should contain the \code{method} name as
 a suffix. For example, if \code{method = "effEdepP"}, then this function will
 look for columns called \code{bbmsy.effEdepP} and \code{ffmsy.effEdepP}.
+
+The \code{type} argument supports legacy synonyms, where \code{"prop"} is the
+same as \code{"count"}, and \code{"all"} is the same as \code{"stock"}.
 }
 \examples{
 \dontrun{
-plotCat(newResTab, method="effEdepP", cats=3, type="prop")
-plotCat(newResTab, method="effEdepP", cats=3, type="all")
+plotCat(newResTab, method="effEdepP", cats=3, type="count")
+plotCat(newResTab, method="effEdepP", cats=3, type="stock")
 }
 
 }
@@ -52,5 +55,5 @@ plotCat(newResTab, method="effEdepP", cats=3, type="all")
 \code{\link{SOFIA-package}} gives an overview of the package.
 }
 \author{
-Rishi Sharma, with a contribution by Arni Magnusson.
+Rishi Sharma and Arni Magnusson.
 }
