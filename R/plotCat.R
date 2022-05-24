@@ -38,8 +38,8 @@
 #'
 #' @examples
 #' \dontrun{
-#' plotCat(newResTab, method="effEdepP", cats=3, type="count")
-#' plotCat(newResTab, method="effEdepP", cats=3, type="stock")
+#' plotCat(stock.timeseries, method="effEdepP", cats=3, type="count")
+#' plotCat(stock.timeseries, method="effEdepP", cats=3, type="stock")
 #' }
 #'
 #' @aliases plotProp

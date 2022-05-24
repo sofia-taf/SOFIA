@@ -54,7 +54,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' calcCat(newResTab, method="effDepP")
+#' calcCat(stock.timeseries, method="effDepP")
 #' }
 #'
 #' @aliases compCat

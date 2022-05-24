@@ -57,7 +57,7 @@ levels corresponding to the different rectangles of a Kobe plot.
 }
 \examples{
 \dontrun{
-calcCat(newResTab, method="effDepP")
+calcCat(stock.timeseries, method="effDepP")
 }
 
 }
