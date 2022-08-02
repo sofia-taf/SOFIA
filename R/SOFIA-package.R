@@ -29,7 +29,7 @@
 #' @author Rishi Sharma and Arni Magnusson.
 #'
 #' @references
-#' \url{https://github.com/sofia-tsaf/SOFIA}
+#' \url{https://github.com/sofia-taf}
 #'
 #' @seealso
 #' \pkg{SOFIA} is used in combination with the packages \pkg{sraplus}

@@ -10,7 +10,7 @@ SOFIA can be installed from GitHub using the `install_github` command:
 
 ```R
 library(remotes)
-install_github("sofia-tsaf/SOFIA")
+install_github("sofia-taf/SOFIA")
 ```
 
 Usage
@@ -26,7 +26,7 @@ library(SOFIA)
 Development
 -----------
 
-SOFIA is developed openly on [GitHub](https://github.com/sofia-tsaf/SOFIA).
+SOFIA is developed openly on [GitHub](https://github.com/sofia-taf/SOFIA).
 
-Feel free to open an [issue](https://github.com/sofia-tsaf/SOFIA/issues) there
-if you encounter problems or have suggestions for future versions.
+Feel free to open an [issue](https://github.com/sofia-taf/SOFIA/issues) there if
+you encounter problems or have suggestions for future versions.
