@@ -1,4 +1,6 @@
-# SOFIA 2.0.0 (2022-05-22)
+# SOFIA 2.0.0 (2022-08-02)
+
+* Added function gitRepos() to list GitHub repositories.
 
 * Dropped legacy support for 'stocks.combined' in addDriors() and addEffort().
 

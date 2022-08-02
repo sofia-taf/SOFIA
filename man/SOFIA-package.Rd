@@ -24,6 +24,10 @@ Tools that support the Transparent SOFIA framework.
 \tabular{ll}{
   \code{\link{plotCat}} \tab summary of stock status categories
 }
+\emph{Repositories:}
+\tabular{ll}{
+  \code{\link{gitRepos}} \tab list GitHub repos
+}
 }
 \references{
 \url{https://github.com/sofia-taf}

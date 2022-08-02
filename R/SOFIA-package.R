@@ -25,6 +25,10 @@
 #' \tabular{ll}{
 #'   \code{\link{plotCat}} \tab summary of stock status categories
 #' }
+#' \emph{Repositories:}
+#' \tabular{ll}{
+#'   \code{\link{gitRepos}} \tab list GitHub repos
+#' }
 #'
 #' @author Rishi Sharma and Arni Magnusson.
 #'
