@@ -31,7 +31,7 @@ gitRepos("arni-magnusson", full=TRUE)
 \seealso{
 \code{\link{SOFIA-package}} gives an overview of the package.
 
-The \pkg{gh} package provides more GitHub API tools.
+The \pkg{gh} package provides additional GitHub API tools.
 }
 \author{
 Arni Magnusson.
