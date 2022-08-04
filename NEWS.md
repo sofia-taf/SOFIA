@@ -1,6 +1,7 @@
 # SOFIA 2.0.0 (2022-08-02)
 
-* Added function gitRepos() to list GitHub repositories.
+* Added functions gitRepos() and gitClone() to list and clone GitHub
+  repositories.
 
 * Dropped legacy support for 'stocks.combined' in addDriors() and addEffort().
 

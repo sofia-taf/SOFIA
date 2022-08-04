@@ -5,8 +5,7 @@
 #' @param owner name of a GitHub organization or user.
 #' @param full whether to include owner name in output.
 #'
-#' @return
-#' String vector of repository names.
+#' @return String vector of repository names.
 #'
 #' @note
 #' This function uses the \href{https://docs.github.com/en/rest}{GitHub API} to
@@ -15,9 +14,9 @@
 #' @author Arni Magnusson.
 #'
 #' @seealso
-#' \code{\link{SOFIA-package}} gives an overview of the package.
+#' \code{\link{gitClone}} clones a repository from GitHub.
 #'
-#' The \pkg{gh} package provides additional GitHub API tools.
+#' \code{\link{SOFIA-package}} gives an overview of the package.
 #'
 #' @examples
 #' \dontrun{

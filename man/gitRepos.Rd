@@ -29,9 +29,9 @@ gitRepos("arni-magnusson", full=TRUE)
 
 }
 \seealso{
-\code{\link{SOFIA-package}} gives an overview of the package.
+\code{\link{gitClone}} clones a repository from GitHub.
 
-The \pkg{gh} package provides additional GitHub API tools.
+\code{\link{SOFIA-package}} gives an overview of the package.
 }
 \author{
 Arni Magnusson.

@@ -26,7 +26,8 @@ Tools that support the Transparent SOFIA framework.
 }
 \emph{Repositories:}
 \tabular{ll}{
-  \code{\link{gitRepos}} \tab list GitHub repos
+  \code{\link{gitRepos}} \tab list GitHub repository\cr
+  \code{\link{gitClone}} \tab clone GitHub repository
 }
 }
 \references{
