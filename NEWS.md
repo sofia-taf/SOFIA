@@ -1,4 +1,4 @@
-# SOFIA 2.0.0 (2022-08-02)
+# SOFIA 2.0.0 (2022-08-04)
 
 * Added functions gitRepos(), gitClone(), and gitCloneAll() to list and clone
   GitHub repositories.
