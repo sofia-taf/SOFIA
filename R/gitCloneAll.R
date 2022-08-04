@@ -29,14 +29,15 @@
 #' @examples
 #' \dontrun{
 #' gitCloneAll()
-#' gitCloneAll("~/git/sofia-taf", method="ssh")
+#' gitCloneAll("~/git/sofia-taf", "ssh")
 #' }
 #'
 #' @export
 
 gitCloneAll <- function(topdir="c:/git/sofia-taf", method="https", tree=TRUE)
 {
-  ## if(dir.exists(topdir))
+  if(dir.exists(topdir) && length(dir(topdir)) > 0)
+    stop(topdir, " must be an empty directory")
   repos <- gitRepos("sofia-taf")
   sapply(repos, gitClone, topdir=topdir, method=method, tree=tree)
 

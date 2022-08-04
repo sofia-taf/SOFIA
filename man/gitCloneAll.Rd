@@ -31,7 +31,7 @@ subdirectory \code{2022/Area37/Demo} instead of \code{2022Area37Demo}.
 \examples{
 \dontrun{
 gitCloneAll()
-gitCloneAll("~/git/sofia-taf", method="ssh")
+gitCloneAll("~/git/sofia-taf", "ssh")
 }
 
 }
