@@ -28,7 +28,8 @@
 #' \emph{Repositories:}
 #' \tabular{ll}{
 #'   \code{\link{gitRepos}} \tab list GitHub repository\cr
-#'   \code{\link{gitClone}} \tab clone GitHub repository
+#'   \code{\link{gitClone}} \tab clone GitHub repository\cr
+#'   \code{\link{gitCloneAll}} \tab clone all SOFIA-TAF repositories
 #' }
 #'
 #' @author Rishi Sharma and Arni Magnusson.

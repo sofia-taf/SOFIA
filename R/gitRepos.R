@@ -16,6 +16,8 @@
 #' @seealso
 #' \code{\link{gitClone}} clones a repository from GitHub.
 #'
+#' \code{\link{gitCloneAll}} clones all SOFIA-TAF repositories from GitHub.
+#'
 #' \code{\link{SOFIA-package}} gives an overview of the package.
 #'
 #' @examples

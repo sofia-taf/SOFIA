@@ -30,17 +30,20 @@
 #' @seealso
 #' \code{\link{gitRepos}} fetches a complete list of GitHub repositories.
 #'
+#' \code{\link{gitCloneAll}} clones all SOFIA-TAF repositories from GitHub.
+#'
 #' \code{\link{SOFIA-package}} gives an overview of the package.
 #'
 #' @examples
 #' \dontrun{
 #' gitClone("2022Area37Demo")
+#' gitClone("2022Area37Demo", "~/git/sofia-taf", method="ssh")
 #' gitClone("arni-magnusson/areaplot", "~/git/arni-magnusson", method="ssh")
 #' }
 #'
 #' @export
 
-gitClone <- function(repo, topdir="c:/git/sofia-taf", tree=TRUE, method="https")
+gitClone <- function(repo, topdir="c:/git/sofia-taf", method="https", tree=TRUE)
 {
   if(!grepl("/", repo))
     repo <- file.path("sofia-taf", repo)

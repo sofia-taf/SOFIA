@@ -4,8 +4,8 @@
 \alias{gitClone}
 \title{gitClone}
 \usage{
-gitClone(repo, topdir = "c:/git/sofia-taf", tree = TRUE,
-  method = "https")
+gitClone(repo, topdir = "c:/git/sofia-taf", method = "https",
+  tree = TRUE)
 }
 \arguments{
 \item{repo}{GitHub repository of the form \code{"repo"} or
@@ -13,10 +13,10 @@ gitClone(repo, topdir = "c:/git/sofia-taf", tree = TRUE,
 
 \item{topdir}{local directory above the repository.}
 
+\item{method}{cloning method, either \code{"https"} or \code{"ssh"}.}
+
 \item{tree}{whether to organize repositories in a nested SOFIA tree, see
 details below.}
-
-\item{method}{cloning method, either \code{"https"} or \code{"ssh"}.}
 }
 \value{
 String containing the cloning command.
@@ -41,12 +41,15 @@ of \code{tree} has no effect.
 \examples{
 \dontrun{
 gitClone("2022Area37Demo")
+gitClone("2022Area37Demo", "~/git/sofia-taf", method="ssh")
 gitClone("arni-magnusson/areaplot", "~/git/arni-magnusson", method="ssh")
 }
 
 }
 \seealso{
 \code{\link{gitRepos}} fetches a complete list of GitHub repositories.
+
+\code{\link{gitCloneAll}} clones all SOFIA-TAF repositories from GitHub.
 
 \code{\link{SOFIA-package}} gives an overview of the package.
 }
