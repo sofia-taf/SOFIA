@@ -6,7 +6,7 @@
 #'        \code{"owner/repo"}.
 #' @param topdir local directory above the repository.
 #' @param method cloning method, either \code{"https"} or \code{"ssh"}.
-#' @param tree whether the organize repositories in a nested SOFIA tree, see
+#' @param tree whether to organize repositories in a nested SOFIA tree, see
 #'        details below.
 #'
 #' @details
