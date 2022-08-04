@@ -18,7 +18,7 @@
 #' \code{method = "ssh"} works best in Linux.
 #'
 #' When \code{tree = TRUE}, this function will recognize standard SOFIA
-#' repository names, such as \code{2022Area37Demo} and clone to a nested
+#' repository names such as \code{2022Area37Demo} and clone to a nested
 #' subdirectory \code{2022/Area37/Demo} instead of \code{2022Area37Demo}. For
 #' repository names that do not follow this YearAreaAnalysis pattern, the value
 #' of \code{tree} has no effect.
