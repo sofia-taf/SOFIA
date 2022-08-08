@@ -8,8 +8,7 @@ addDriors(stocks, priors, same.priors, shape_prior = 2, b_ref_type = "k",
   growth_rate_prior = NA, growth_rate_prior_cv = 0.2, ...)
 }
 \arguments{
-\item{stocks}{\code{tibble} containing \code{stock}, \code{taxa}, and
-\code{data}.}
+\item{stocks}{\code{tibble} containing \code{stock} and \code{data}.}
 
 \item{priors}{data frame containing \code{stock}, \code{initial_state},
 \code{initial_state_cv}, \code{terminal_state}, and

@@ -1,4 +1,4 @@
-# SOFIA 2.0.0 (2022-08-04)
+# SOFIA 2.0.0 (2022-08-08)
 
 * Added functions gitRepos(), gitClone(), and gitCloneAll() to list and clone
   GitHub repositories.
@@ -6,6 +6,10 @@
 * Dropped legacy support for 'stocks.combined' in addDriors() and addEffort().
 
 * Added errors and warnings if stock names in catch/effort/priors don't match.
+
+* Simplified addDriors() so it requires only the 'stock' name, not the 'taxa'
+  name. These names used to be identical, but only 'stock' will be used from now
+  on.
 
 * Improved plotCat() so it treats the first two columns of the input data frame
   as stock and year.

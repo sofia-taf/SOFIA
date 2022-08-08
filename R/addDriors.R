@@ -2,8 +2,7 @@
 #'
 #' Add driors (data and priors) column to \sQuote{stocks} object.
 #'
-#' @param stocks \code{tibble} containing \code{stock}, \code{taxa}, and
-#'        \code{data}.
+#' @param stocks \code{tibble} containing \code{stock} and \code{data}.
 #' @param priors data frame containing \code{stock}, \code{initial_state},
 #'        \code{initial_state_cv}, \code{terminal_state}, and
 #'        \code{terminal_state_cv}.
@@ -73,7 +72,7 @@ addDriors <- function(stocks, priors, same.priors, shape_prior=2,
     p <- if(same.priors) match("All", priors$stock)
          else match(stocks$stock[i], priors$stock)
     driors[[i]] <- format_driors(
-      taxa = stocks$taxa[i],
+      taxa = stocks$stock[i],
       shape_prior = 2,
       catch = stocks$data[[i]]$capture,
       years = stocks$data[[i]]$year,
