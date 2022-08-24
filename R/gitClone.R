@@ -1,4 +1,4 @@
-#' gitClone
+#' Clone
 #'
 #' Clone a repository from GitHub.
 #'

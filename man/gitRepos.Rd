@@ -2,7 +2,7 @@
 % Please edit documentation in R/gitRepos.R
 \name{gitRepos}
 \alias{gitRepos}
-\title{gitRepos}
+\title{List Repositories}
 \usage{
 gitRepos(owner = "sofia-taf", full = FALSE)
 }

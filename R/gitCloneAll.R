@@ -1,4 +1,4 @@
-#' gitCloneAll
+#' Clone All
 #'
 #' Clone all SOFIA-TAF repositories from GitHub.
 #'

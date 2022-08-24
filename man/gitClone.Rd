@@ -2,7 +2,7 @@
 % Please edit documentation in R/gitClone.R
 \name{gitClone}
 \alias{gitClone}
-\title{gitClone}
+\title{Clone}
 \usage{
 gitClone(repo, topdir = "c:/git/sofia-taf", method = "https",
   tree = TRUE)

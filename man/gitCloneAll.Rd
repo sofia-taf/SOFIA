@@ -2,7 +2,7 @@
 % Please edit documentation in R/gitCloneAll.R
 \name{gitCloneAll}
 \alias{gitCloneAll}
-\title{gitCloneAll}
+\title{Clone All}
 \usage{
 gitCloneAll(topdir = "c:/git/sofia-taf", method = "https", tree = TRUE)
 }

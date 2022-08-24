@@ -1,4 +1,4 @@
-#' gitRepos
+#' List Repositories
 #'
 #' List all GitHub repositories owned by an organization or user.
 #'
