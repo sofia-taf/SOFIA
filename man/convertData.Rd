@@ -10,7 +10,7 @@ convertData(subdir, min.catch = 0.001, quiet = FALSE)
 \item{subdir}{directory containing the primary data files.}
 
 \item{min.catch}{small numeric constant to use instead of \code{NA} or zero
-catches.}
+catch.}
 
 \item{quiet}{whether to suppress screen output.}
 }
@@ -20,8 +20,7 @@ describing the files after conversion.
 }
 \description{
 Convert primary single-stock data files into combined data files ready for
-analysis, such \code{catches.csv}, \code{effort.csv}, and/or
-\code{indices.csv}.
+analysis, such \code{catch.csv}, \code{effort.csv}, and/or \code{index.csv}.
 }
 \details{
 \code{subdir} is usually one of \code{"both"}, \code{"effort"},
@@ -36,13 +35,13 @@ A primary data file can have a filename such as
 \file{Yellowtail_snapper_Mexico.csv} and columns such as
 \code{stockid|scientificname|commonname|year|catch|stocklong}.
 
-The combined data files, such as \code{catches.csv}, have the format
+The combined data files, such as \code{catch.csv}, have the format
 \code{Year|Unique_Stock_Name_1|Unique_Stock_Name_2|...} where, for example,
 \code{Yellowtail_snapper_Mexico} is one column name.
 
 The output files created will depend on whether the data include effort
 and/or index data. If \code{subdir = "both"}, a full set of output files will
-be created: \code{catches.csv}, \code{effort.csv}, and \code{index.csv}.
+be created: \code{catch.csv}, \code{effort.csv}, and \code{index.csv}.
 
 The functions \code{groupData} and \code{convertData} are used together:
 first group, then convert.
