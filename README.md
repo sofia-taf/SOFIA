@@ -1,7 +1,8 @@
 SOFIA
 =====
 
-The SOFIA package provides tools that support the Transparent SOFIA framework.
+The SOFIA package provides tools that support the [SOFIA Transparent Assessment
+Framework](https://github.com/sofia-taf/doc).
 
 Installation
 ------------

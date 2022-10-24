@@ -6,7 +6,7 @@
 \alias{SOFIA}
 \title{Tools to Work with SOFIA Analyses}
 \description{
-Tools that support the Transparent SOFIA framework.
+Tools that support the SOFIA Transparent Assessment Framework.
 }
 \details{
 \emph{Prepare data:}
@@ -32,7 +32,7 @@ Tools that support the Transparent SOFIA framework.
 }
 }
 \references{
-\url{https://github.com/sofia-taf}
+\url{https://github.com/sofia-taf/doc}
 }
 \seealso{
 \pkg{SOFIA} is used in combination with the packages \pkg{sraplus}
