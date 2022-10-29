@@ -24,6 +24,8 @@
 #' \code{\link{merge}} is the underlying function used to merge the two data
 #' frames.
 #'
+#' \code{\link{addIndex}} adds an index column to catch data.
+#'
 #' \code{\link{addDriors}} adds a driors column to stocks.
 #'
 #' \code{\link{SOFIA-package}} gives an overview of the package.

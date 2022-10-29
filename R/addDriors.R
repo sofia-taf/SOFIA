@@ -69,8 +69,23 @@ addDriors <- function(stocks, priors, same.priors, shape_prior=2,
     if(same.priors && !("All" %in% priors$stock))
       stop("using same.priors=TRUE, so priors table must contain stock='All'")
     ## p is the row number for the priors data frame
-    p <- if(same.priors) match("All", priors$stock)
-         else match(stocks$stock[i], priors$stock)
+    p <- if(same.priors)
+           match("All", priors$stock)
+         else
+           match(stocks$stock[i], priors$stock)
+    ## Set effort and index to default value if not in data
+    effort <- if("effort" %in% names(stocks$data[[i]]))
+                stocks$data[[i]]$effort[!is.na(stocks$data[[i]]$effort)]
+              else formals(format_driors)$effort
+    effort_years <- if("effort" %in% names(stocks$data[[i]]))
+                      stocks$data[[i]]$year[!is.na(stocks$data[[i]]$effort)]
+                    else formals(format_driors)$effort_years
+    index <- if("index" %in% names(stocks$data[[i]]))
+               stocks$data[[i]]$index[[!is.na(stocks$data[[i]]$index)]]
+             else formals(format_driors)$index
+    index_years <- if("index" %in% names(stocks$data[[i]]))
+                     stocks$data[[i]]$year[!is.na(stocks$data[[i]]$index)]
+                   else formals(format_driors)$index_year
     driors[[i]] <- format_driors(
       taxa = stocks$stock[i],
       shape_prior = 2,
@@ -81,8 +96,10 @@ addDriors <- function(stocks, priors, same.priors, shape_prior=2,
       b_ref_type = "k",
       terminal_state = priors$terminal_state[p],
       terminal_state_cv = priors$terminal_state_cv[p],
-      effort = na.omit(stocks$data[[i]])$effort,
-      effort_years = na.omit(stocks$data[[i]])$year,
+      effort = effort,
+      effort_years = effort_years,
+      index = indexa,
+      index_years = index_years,
       growth_rate_prior = NA,
       growth_rate_prior_cv = 0.2,
       ...)

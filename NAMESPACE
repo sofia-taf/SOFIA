@@ -2,6 +2,7 @@
 
 export(addDriors)
 export(addEffort)
+export(addIndex)
 export(calcCat)
 export(compCat)
 export(convertData)

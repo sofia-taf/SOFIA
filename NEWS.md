@@ -1,3 +1,10 @@
+# SOFIA 2.1.0 (2022-10-29)
+
+* Added function addIndex() to add index column to catch data.
+
+
+
+
 # SOFIA 2.0.0 (2022-08-08)
 
 * Added functions gitRepos(), gitClone(), and gitCloneAll() to list and clone

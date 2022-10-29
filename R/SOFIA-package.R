@@ -14,6 +14,7 @@
 #' \tabular{ll}{
 #'   \code{\link{addDriors}}   \tab add driors column to stocks object\cr
 #'   \code{\link{addEffort}}   \tab add effort column to catch data\cr
+#'   \code{\link{addIndex}}    \tab add index column to catch data\cr
 #'   \code{\link{convertData}} \tab convert primary data to combined data\cr
 #'   \code{\link{groupData}}   \tab group primary data in subdirectories
 #' }
