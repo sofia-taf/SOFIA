@@ -4,8 +4,8 @@
 \alias{addDriors}
 \title{Add Driors}
 \usage{
-addDriors(stocks, priors, same.priors, shape_prior = 2, b_ref_type = "k",
-  growth_rate_prior = NA, growth_rate_prior_cv = 0.2, ...)
+addDriors(stocks, priors, same.priors, shape_prior = 2,
+  growth_rate_prior_cv = 0.2, ...)
 }
 \arguments{
 \item{stocks}{\code{tibble} containing \code{stock} and \code{data}.}
@@ -17,10 +17,6 @@ addDriors(stocks, priors, same.priors, shape_prior = 2, b_ref_type = "k",
 \item{same.priors}{whether to use the same priors for all stocks.}
 
 \item{shape_prior}{passed to \code{format_driors}.}
-
-\item{b_ref_type}{passed to \code{format_driors}.}
-
-\item{growth_rate_prior}{passed to \code{format_driors}.}
 
 \item{growth_rate_prior_cv}{passed to \code{format_driors}.}
 

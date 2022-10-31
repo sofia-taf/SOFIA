@@ -8,8 +8,6 @@
 #'        \code{terminal_state_cv}.
 #' @param same.priors whether to use the same priors for all stocks.
 #' @param shape_prior passed to \code{format_driors}.
-#' @param b_ref_type passed to \code{format_driors}.
-#' @param growth_rate_prior passed to \code{format_driors}.
 #' @param growth_rate_prior_cv passed to \code{format_driors}.
 #' @param \dots additional arguments passed to \code{format_driors}.
 #'
@@ -46,7 +44,6 @@
 #' @export
 
 addDriors <- function(stocks, priors, same.priors, shape_prior=2,
-                      b_ref_type="k", growth_rate_prior=NA,
                       growth_rate_prior_cv=0.2, ...)
 {
   ## 1a  Make sure priors table contains stock 'All' if same.priors=TRUE
@@ -93,14 +90,12 @@ addDriors <- function(stocks, priors, same.priors, shape_prior=2,
       years = stocks$data[[i]]$year,
       initial_state = priors$initial_state[p],
       initial_state_cv = priors$initial_state_cv[p],
-      b_ref_type = b_ref_type,
       terminal_state = priors$terminal_state[p],
       terminal_state_cv = priors$terminal_state_cv[p],
       effort = effort,
       effort_years = effort_years,
       index = index,
       index_years = index_years,
-      growth_rate_prior = NA,
       growth_rate_prior_cv = 0.2,
       ...)
   }
