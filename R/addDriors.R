@@ -96,7 +96,7 @@ addDriors <- function(stocks, priors, same.priors, shape_prior=2,
       effort_years = effort_years,
       index = index,
       index_years = index_years,
-      growth_rate_prior_cv = 0.2,
+      growth_rate_prior_cv = growth_rate_prior_cv,
       ...)
   }
   stocks$driors <- driors
