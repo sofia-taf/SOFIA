@@ -2,6 +2,8 @@
 
 * Added function addIndex() to add index column to catch data.
 
+* Improved addDriors() so it passes 'growth_rate_prior_cv' to format_driors().
+
 
 
 
