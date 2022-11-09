@@ -78,7 +78,7 @@ addDriors <- function(stocks, priors, same.priors, shape_prior=2,
                       stocks$data[[i]]$year[!is.na(stocks$data[[i]]$effort)]
                     else formals(format_driors)$effort_years
     index <- if("index" %in% names(stocks$data[[i]]))
-               stocks$data[[i]]$index[[!is.na(stocks$data[[i]]$index)]]
+               stocks$data[[i]]$index[!is.na(stocks$data[[i]]$index)]
              else formals(format_driors)$index
     index_years <- if("index" %in% names(stocks$data[[i]]))
                      stocks$data[[i]]$year[!is.na(stocks$data[[i]]$index)]
