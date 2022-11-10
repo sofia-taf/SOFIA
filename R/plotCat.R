@@ -44,7 +44,7 @@
 #'
 #' @aliases plotProp
 #'
-#' @importFrom ggplot2 aes_string geom_bar geom_raster ggplot theme_minimal
+#' @importFrom ggplot2 aes geom_bar geom_raster ggplot theme_minimal
 #'                     scale_fill_manual
 #'
 #' @export
@@ -72,17 +72,18 @@ plotCat <- function(dat, method="cmsy.naive", cats=4, type="count")
   }
 
   ## Plot
-  ## (use aes_string to avoid R CMD check notes)
   if(type == "count" || type == "prop")
   {
-    ggplot(data=tDat, aes_string(x="year", color="estCat")) +
-      geom_bar(aes_string(fill="estCat"), width=0.5) +
+    year <- estCat <- NULL  # suppress R CMD check notes
+    ggplot(tDat, aes(x=year, color=estCat)) +
+      geom_bar(aes(fill=estCat), width=0.5) +
       theme_minimal() +
       scale_fill_manual(values=cols)
   }
   else if(type == "stock" || type == "all")
   {
-    ggplot(tDat, aes_string(x="year", y="stock", fill="estCat")) +
+    year <- stock <- estCat <- NULL  # suppress R CMD check notes
+    ggplot(tDat, aes(x=year, y=stock, fill=estCat)) +
       geom_raster() +
       theme_minimal() +
       scale_fill_manual(values=cols)
