@@ -1,4 +1,4 @@
-# SOFIA 2.1.0 (2022-10-29)
+# SOFIA 2.1.0 (2022-11-11)
 
 * Added function addIndex() to add index column to catch data.
 
