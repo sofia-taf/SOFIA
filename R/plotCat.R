@@ -94,7 +94,7 @@ plotCat <- function(dat, method="cmsy.naive", cats=4, type="count", legend=TRUE)
   else if(type == "prop")
   {
     if(legend)
-      opar <- par(fig=c(0,0.85,0,1))
+      opar <- par(fig=c(0,0.8,0,1))
     percent <- 100 * prop.table(table(status$year, status$estCat), margin=1)
     areaplot(percent, col=col, ann=FALSE, xaxs="i", yaxs="i", border=NA)
     abline(h=c(20,40,60,80), col="lightgray", lty=2)
@@ -103,7 +103,7 @@ plotCat <- function(dat, method="cmsy.naive", cats=4, type="count", legend=TRUE)
     if(legend)
     {
       legend("right", rev(levels), fill=rev(col), border=NA, bty="n",
-             inset=c(-0.25,0), xpd=NA)
+             inset=c(-0.3,0), xpd=NA)
       par(opar)
     }
     invisible(col)
