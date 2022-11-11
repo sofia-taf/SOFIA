@@ -5,7 +5,8 @@
 * Added plotCat() 'type' option "prop" to draw a proportional area plot. Dropped
   legacy support for 'type' option "all".
 
-* Improved addDriors() so it passes 'growth_rate_prior_cv' to format_driors().
+* Improved addDriors() so it passes 'shape_prior' and 'growth_rate_prior_cv' to
+  format_driors().
 
 
 
