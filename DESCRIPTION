@@ -4,7 +4,7 @@ Date: 2022-10-29
 Title: Tools to Work with SOFIA Analyses
 Authors@R: c(person("Rishi", "Sharma", role="aut"),
              person("Arni", "Magnusson", role=c("aut","cre"), email="thisisarni@gmail.com"))
-Imports: stats, utils, ggplot2, sraplus, TAF
+Imports: graphics, stats, utils, areaplot, ggplot2, sraplus, TAF
 Description: Tools that support the SOFIA Transparent Assessment Framework.
 License: GPL-3
 URL: https://github.com/sofia-taf/SOFIA

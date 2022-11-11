@@ -5,7 +5,8 @@
 \alias{plotProp}
 \title{Plot Categories}
 \usage{
-plotCat(dat, method = "cmsy.naive", cats = 4, type = "count")
+plotCat(dat, method = "cmsy.naive", cats = 4, type = "count",
+  legend = TRUE)
 }
 \arguments{
 \item{dat}{data frame of stock time series, containing columns named
@@ -19,11 +20,14 @@ F/Fmsy.}
 status based on biomass only (3 categories) or based on biomass and
 fishing mortality (4 categories).}
 
-\item{type}{string indicating the type of plot, either \code{"count"} or
-\code{"stock"}.}
+\item{type}{string indicating the type of plot: \code{"count"},
+\code{"prop"}, or \code{"stock"}.}
+
+\item{legend}{whether to add a legend (applies only if \code{type = "prop"}.}
 }
 \value{
-A \code{ggplot} object.
+A \code{ggplot} object if \code{type} is \code{"count"} or \code{"stock"}, or
+a vector of colors if \code{type} is \code{"prop"}.
 }
 \description{
 Plot a summary of stock status categories by year: underfished (green), fully
@@ -37,12 +41,15 @@ The last column names in \code{dat} should contain the \code{method} name as
 a suffix. For example, if \code{method = "effEdepP"}, then this function will
 look for columns called \code{bbmsy.effEdepP} and \code{ffmsy.effEdepP}.
 
-The \code{type} argument supports legacy synonyms, where \code{"prop"} is the
-same as \code{"count"}, and \code{"all"} is the same as \code{"stock"}.
+When plotting a \code{type = "prop"} plot, the legend format is tailored for
+the \code{taf.png} device defaults. By passing \code{legend = FALSE}, the
+user can manually draw a legend that fits some other plot size and aspect
+ratio.
 }
 \examples{
 \dontrun{
 plotCat(stock.timeseries, method="effEdepP", cats=3, type="count")
+plotCat(stock.timeseries, method="effEdepP", cats=3, type="prop")
 plotCat(stock.timeseries, method="effEdepP", cats=3, type="stock")
 }
 

@@ -11,8 +11,9 @@
 #' @param cats either \code{3} or \code{4}, indicating whether to plot the stock
 #'        status based on biomass only (3 categories) or based on biomass and
 #'        fishing mortality (4 categories).
-#' @param type string indicating the type of plot, either \code{"count"} or
-#'        \code{"stock"}.
+#' @param type string indicating the type of plot: \code{"count"},
+#'        \code{"prop"}, or \code{"stock"}.
+#' @param legend whether to add a legend (applies only if \code{type = "prop"}.
 #'
 #' @details
 #' The first two columns in \code{dat} are treated as \code{'stock'} and
@@ -22,10 +23,14 @@
 #' a suffix. For example, if \code{method = "effEdepP"}, then this function will
 #' look for columns called \code{bbmsy.effEdepP} and \code{ffmsy.effEdepP}.
 #'
-#' The \code{type} argument supports legacy synonyms, where \code{"prop"} is the
-#' same as \code{"count"}, and \code{"all"} is the same as \code{"stock"}.
+#' When plotting a \code{type = "prop"} plot, the legend format is tailored for
+#' the \code{taf.png} device defaults. By passing \code{legend = FALSE}, the
+#' user can manually draw a legend that fits some other plot size and aspect
+#' ratio.
 #'
-#' @return A \code{ggplot} object.
+#' @return
+#' A \code{ggplot} object if \code{type} is \code{"count"} or \code{"stock"}, or
+#' a vector of colors if \code{type} is \code{"prop"}.
 #'
 #' @author Rishi Sharma and Arni Magnusson.
 #'
@@ -39,6 +44,7 @@
 #' @examples
 #' \dontrun{
 #' plotCat(stock.timeseries, method="effEdepP", cats=3, type="count")
+#' plotCat(stock.timeseries, method="effEdepP", cats=3, type="prop")
 #' plotCat(stock.timeseries, method="effEdepP", cats=3, type="stock")
 #' }
 #'
@@ -46,47 +52,67 @@
 #'
 #' @importFrom ggplot2 aes geom_bar geom_raster ggplot theme_minimal
 #'                     scale_fill_manual
+#' @importFrom areaplot areaplot
+#' @importFrom graphics abline box par title
 #'
 #' @export
 
-plotCat <- function(dat, method="cmsy.naive", cats=4, type="count")
+plotCat <- function(dat, method="cmsy.naive", cats=4, type="count", legend=TRUE)
 {
   names(dat)[1:2] <- c("stock", "year")  # convert Stock->stock, yr->year
 
-  txt3 <- c("b>1.2", "0.8<b<1.2", "b<0.8")
-  txt4 <- c("b>1,f<1", "b>1,f>1", "b<1,f<1", "b<1,f>1")
+  levels3 <- c("Underfished", "Fully fished", "Overfished")
+  levels4 <- c("b>1,f<1", "b>1,f>1", "b<1,f<1", "b<1,f>1")
 
   ## Create a new data frame with the categories
-  tDat <- calcCat(dat, method=method)
-  tDat <- tDat[, c("stock", "year", "estCat3", "estCat4")]
+  status <- calcCat(dat, method=method)
+  bbmsy.cols <- grep("bbmsy", names(status), value=TRUE)
+  status <- status[, c("stock", "year", bbmsy.cols, "estCat3", "estCat4")]
 
   if(cats == 3)
   {
-    tDat$estCat <- factor(txt3[tDat$estCat3], levels=txt3)
-    cols <- c("darkgreen", "yellow", "red")
+    status$estCat <- factor(levels3[status$estCat3], levels=levels3)
+    col <- c(3, 7, 2)
   }
   else
   {
-    tDat$estCat <- factor(txt4[tDat$estCat4], levels=txt4)
-    cols <- c("darkgreen", "orange", "yellow", "red")
+    status$estCat <- factor(levels4[status$estCat4], levels=levels4)
+    col <- c("darkgreen", "orange", "yellow", "red")
   }
 
   ## Plot
-  if(type == "count" || type == "prop")
+  if(type == "count")
   {
     year <- estCat <- NULL  # suppress R CMD check notes
-    ggplot(tDat, aes(x=year, color=estCat)) +
+    ggplot(status, aes(x=year, color=estCat)) +
       geom_bar(aes(fill=estCat), width=0.5) +
       theme_minimal() +
-      scale_fill_manual(values=cols)
+      scale_fill_manual(values=col)
   }
-  else if(type == "stock" || type == "all")
+  else if(type == "prop")
+  {
+    if(legend)
+      opar <- par(fig=c(0,0.85,0,1))
+    percent <- 100 * prop.table(table(status$year, status$estCat), margin=1)
+    areaplot(percent, col=col, ann=FALSE, xaxs="i", yaxs="i", border=NA)
+    abline(h=c(20,40,60,80), col="lightgray", lty=2)
+    title(xlab="Year", ylab="Stock status (%)")
+    box()
+    if(legend)
+    {
+      legend("right", rev(levels), fill=rev(col), border=NA, bty="n",
+             inset=c(-0.25,0), xpd=NA)
+      par(opar)
+    }
+    invisible(col)
+  }
+  else if(type == "stock")
   {
     year <- stock <- estCat <- NULL  # suppress R CMD check notes
-    ggplot(tDat, aes(x=year, y=stock, fill=estCat)) +
+    ggplot(status, aes(x=year, y=stock, fill=estCat)) +
       geom_raster() +
       theme_minimal() +
-      scale_fill_manual(values=cols)
+      scale_fill_manual(values=col)
   }
 }
 
