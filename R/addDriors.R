@@ -85,17 +85,18 @@ addDriors <- function(stocks, priors, same.priors, shape_prior=2,
                    else formals(format_driors)$index_year
     driors[[i]] <- format_driors(
       taxa = stocks$stock[i],
-      shape_prior = shape_prior,
       catch = stocks$data[[i]]$capture,
       years = stocks$data[[i]]$year,
-      initial_state = priors$initial_state[p],
-      initial_state_cv = priors$initial_state_cv[p],
-      terminal_state = priors$terminal_state[p],
-      terminal_state_cv = priors$terminal_state_cv[p],
       effort = effort,
       effort_years = effort_years,
       index = index,
       index_years = index_years,
+      ## Prior section
+      shape_prior = shape_prior,
+      initial_state = priors$initial_state[p],
+      initial_state_cv = priors$initial_state_cv[p],
+      terminal_state = priors$terminal_state[p],
+      terminal_state_cv = priors$terminal_state_cv[p],
       growth_rate_prior_cv = growth_rate_prior_cv,
       ...)
   }
