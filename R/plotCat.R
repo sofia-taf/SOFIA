@@ -71,12 +71,14 @@ plotCat <- function(dat, method="cmsy.naive", cats=4, type="count", legend=TRUE)
 
   if(cats == 3)
   {
-    status$estCat <- factor(levels3[status$estCat3], levels=levels3)
+    levels <- levels3
+    status$estCat <- factor(levels[status$estCat3], levels=levels)
     col <- c(3, 7, 2)
   }
   else
   {
-    status$estCat <- factor(levels4[status$estCat4], levels=levels4)
+    levels <- levels4
+    status$estCat <- factor(levels[status$estCat4], levels=levels)
     col <- c("darkgreen", "orange", "yellow", "red")
   }
 
