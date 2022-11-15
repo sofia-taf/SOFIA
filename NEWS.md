@@ -1,3 +1,10 @@
+# SOFIA 2.1.1 (2022-11-15)
+
+* Removed dependency on areaplot package.
+
+
+
+
 # SOFIA 2.1.0 (2022-11-11)
 
 * Added function addIndex() to add index column to catch data.

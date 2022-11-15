@@ -52,8 +52,7 @@
 #'
 #' @importFrom ggplot2 aes geom_bar geom_raster ggplot theme_minimal
 #'                     scale_fill_manual
-#' @importFrom areaplot areaplot
-#' @importFrom graphics abline box par title
+#' @importFrom graphics abline box matplot par polygon title
 #'
 #' @export
 
@@ -96,7 +95,17 @@ plotCat <- function(dat, method="cmsy.naive", cats=4, type="count", legend=TRUE)
     if(legend)
       opar <- par(fig=c(0,0.8,0,1))
     percent <- 100 * prop.table(table(status$year, status$estCat), margin=1)
-    areaplot(percent, col=col, ann=FALSE, xaxs="i", yaxs="i", border=NA)
+    ## beg: areaplot(percent, col=col, ann=FALSE, xaxs="i", yaxs="i", border=NA)
+    x <- as.integer(rownames(percent))
+    y <- t(rbind(0, apply(percent, 1, cumsum)))
+    matplot(x, y, type="n", ann=FALSE, xaxs="i", yaxs="i")
+    xx <- c(x, rev(x))
+    for(i in 1:(ncol(y)-1))
+    {
+      yy <- c(y[,i+1], rev(y[,i]))
+      polygon(xx, yy, col=col[i], border=NA)
+    }
+    ## end: areaplot(percent, col=col, ann=FALSE, xaxs="i", yaxs="i", border=NA)
     abline(h=c(20,40,60,80), col="lightgray", lty=2)
     title(xlab="Year", ylab="Stock status (%)")
     box()
