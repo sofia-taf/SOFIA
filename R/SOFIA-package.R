@@ -28,7 +28,7 @@
 #' }
 #' \emph{Repositories:}
 #' \tabular{ll}{
-#'   \code{\link{gitRepos}} \tab list GitHub repository\cr
+#'   \code{\link{gitRepos}} \tab list GitHub repositories\cr
 #'   \code{\link{gitClone}} \tab clone GitHub repository\cr
 #'   \code{\link{gitCloneAll}} \tab clone all SOFIA-TAF repositories
 #' }
