@@ -1,3 +1,10 @@
+# SOFIA 2.1.2 (2023-04-20)
+
+* Changed gitClone() so it recognizes repository names starting with "Workshop".
+
+
+
+
 # SOFIA 2.1.1 (2022-11-15)
 
 * Removed dependency on areaplot package.

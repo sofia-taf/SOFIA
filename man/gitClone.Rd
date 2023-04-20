@@ -33,10 +33,17 @@ Generally, the default \code{method = "https"} works best in Windows, while
 \code{method = "ssh"} works best in Linux.
 
 When \code{tree = TRUE}, this function will recognize standard SOFIA
-repository names such as \code{2022Area37Demo} and clone to a nested
-subdirectory \code{2022/Area37/Demo} instead of \code{2022Area37Demo}. For
-repository names that do not follow this YearAreaAnalysis pattern, the value
-of \code{tree} has no effect.
+repository names such as \code{2022Area37Demo} and
+\code{WorkshopPriorsByStock} and create nested subdirectories on the user
+machine:
+\tabular{ll}{
+  Repository on GitHub \tab Path on user machine\cr
+  \code{2022Area37Demo} \tab \code{2022/Area37/Demo}\cr
+  \code{WorkshopPriorsByStock} \tab \code{Workshop/PriorsByStock}\cr
+  \code{SOFIA} \tab \code{SOFIA}
+}
+For repository names that do not start with a year \code{"20**"} or
+\code{"Workshop"}, the value of \code{tree} has no effect.
 }
 \examples{
 \dontrun{

@@ -18,10 +18,17 @@
 #' \code{method = "ssh"} works best in Linux.
 #'
 #' When \code{tree = TRUE}, this function will recognize standard SOFIA
-#' repository names such as \code{2022Area37Demo} and clone to a nested
-#' subdirectory \code{2022/Area37/Demo} instead of \code{2022Area37Demo}. For
-#' repository names that do not follow this YearAreaAnalysis pattern, the value
-#' of \code{tree} has no effect.
+#' repository names such as \code{2022Area37Demo} and
+#' \code{WorkshopPriorsByStock} and create nested subdirectories on the user
+#' machine:
+#' \tabular{ll}{
+#'   Repository on GitHub \tab Path on user machine\cr
+#'   \code{2022Area37Demo} \tab \code{2022/Area37/Demo}\cr
+#'   \code{WorkshopPriorsByStock} \tab \code{Workshop/PriorsByStock}\cr
+#'   \code{SOFIA} \tab \code{SOFIA}
+#' }
+#' For repository names that do not start with a year \code{"20**"} or
+#' \code{"Workshop"}, the value of \code{tree} has no effect.
 #'
 #' @return String containing the cloning command.
 #'
@@ -53,6 +60,8 @@ gitClone <- function(repo, topdir="c:/git/sofia-taf", method="https", tree=TRUE)
   subdir <- basename(repo)
   if(tree && grepl("^20[0-9][0-9]Area[0-9][0-9].+", subdir))
     subdir <- paste(substring(subdir, c(1,5,11), c(4,10,255)), collapse="/")
+  if(tree && grepl("^Workshop.+", subdir))
+    subdir <- paste(substring(subdir, c(1,9), c(8,255)), collapse="/")
 
   os <- Sys.info()[["sysname"]]
   if(grepl("^[A-Za-z]:",topdir) && os!="Windows")
