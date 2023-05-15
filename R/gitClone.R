@@ -24,6 +24,7 @@
 #' \tabular{ll}{
 #'   Repository on GitHub \tab Path on user machine\cr
 #'   \code{2022Area37Demo} \tab \code{2022/Area37/Demo}\cr
+#'   \code{2022DeepSeasCCAMLR} \tab \code{2022/DeepSeasCCAMLR}\cr
 #'   \code{WorkshopPriorsByStock} \tab \code{Workshop/PriorsByStock}\cr
 #'   \code{SOFIA} \tab \code{SOFIA}
 #' }
@@ -58,10 +59,15 @@ gitClone <- function(repo, topdir="c:/git/sofia-taf", method="https", tree=TRUE)
   uri <- paste0(prefix, repo)
 
   subdir <- basename(repo)
-  if(tree && grepl("^20[0-9][0-9]Area[0-9][0-9].+", subdir))
-    subdir <- paste(substring(subdir, c(1,5,11), c(4,10,255)), collapse="/")
-  if(tree && grepl("^Workshop.+", subdir))
-    subdir <- paste(substring(subdir, c(1,9), c(8,255)), collapse="/")
+  if(tree)
+  {
+    if(grepl("^20[0-9][0-9]Area[0-9][0-9].+", subdir))
+      subdir <- paste(substring(subdir, c(1,5,11), c(4,10,255)), collapse="/")
+    else if(grepl("^20[0-9][0-9].+", subdir))
+      subdir <- paste(substring(subdir, c(1,5), c(4,255)), collapse="/")
+    else if(grepl("^Workshop.+", subdir))
+      subdir <- paste(substring(subdir, c(1,9), c(8,255)), collapse="/")
+  }
 
   os <- Sys.info()[["sysname"]]
   if(grepl("^[A-Za-z]:",topdir) && os!="Windows")

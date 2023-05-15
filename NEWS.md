@@ -1,6 +1,7 @@
-# SOFIA 2.1.2 (2023-04-20)
+# SOFIA 2.1.2 (2023-05-16)
 
-* Changed gitClone() so it recognizes repository names starting with "Workshop".
+* Changed gitClone() so it recognizes repository names starting with "20**" and
+  "Workshop".
 
 
 

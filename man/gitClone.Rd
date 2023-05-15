@@ -39,6 +39,7 @@ machine:
 \tabular{ll}{
   Repository on GitHub \tab Path on user machine\cr
   \code{2022Area37Demo} \tab \code{2022/Area37/Demo}\cr
+  \code{2022DeepSeasCCAMLR} \tab \code{2022/DeepSeasCCAMLR}\cr
   \code{WorkshopPriorsByStock} \tab \code{Workshop/PriorsByStock}\cr
   \code{SOFIA} \tab \code{SOFIA}
 }
