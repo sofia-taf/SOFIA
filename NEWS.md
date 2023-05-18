@@ -3,6 +3,9 @@
 * Changed gitClone() so it recognizes repository names starting with
   "20**Anything" and "Workshop".
 
+* Changed addDriors() so it raises an error if the priors table column
+  'terminal_state_cv' contains NA values.
+
 
 
 

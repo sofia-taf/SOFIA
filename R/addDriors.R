@@ -46,11 +46,15 @@
 addDriors <- function(stocks, priors, same.priors, shape_prior=2,
                       growth_rate_prior_cv=0.2, ...)
 {
-  ## 1a  Make sure priors table contains stock 'All' if same.priors=TRUE
+  ## 1a  Make sure priors column 'terminal_state_cv' does not contain NA
+  if(any(is.na(priors$terminal_state_cv)))
+    stop("priors table column 'terminal_state_cv' must not contain NA values")
+
+  ## 1b  Make sure priors table contains stock 'All' if same.priors=TRUE
   if(same.priors && !("All" %in% priors$stock))
     stop("using same.priors=TRUE, so priors table must contain stock='All'")
 
-  ## 1b  Make sure catch and priors have matching stocks if same.priors=FALSE
+  ## 1c  Make sure catch and priors have matching stocks if same.priors=FALSE
   sstocks <- sort(stocks$stock)
   pstocks <- sort(priors$stock)
   if(!same.priors && !any(sstocks %in% pstocks))
