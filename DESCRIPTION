@@ -1,6 +1,6 @@
 Package: SOFIA
 Version: 2.1.2
-Date: 2023-05-16
+Date: 2023-05-19
 Title: Tools to Work with SOFIA Analyses
 Authors@R: c(person("Rishi", "Sharma", role="aut"),
              person("Arni", "Magnusson", role=c("aut","cre"), email="thisisarni@gmail.com"))
