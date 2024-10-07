@@ -66,7 +66,7 @@ calcCat <- function(dat, method="cmsy.naive")
   tmpDat <- dat
   sep <- if(method == "") "" else "."
 
-  ## for 4 categories
+  # for 4 categories
   tmpDat$trueCat4 <- ifelse(dat$bbmsy > 1, ifelse(dat$ffmsy < 1, 1, 2),
                      ifelse(dat$ffmsy < 1, 3, 4))
   tmpDat$estCat4 <- ifelse(dat[, paste("bbmsy", method, sep=sep)] > 1,
@@ -85,11 +85,11 @@ calcCat <- function(dat, method="cmsy.naive")
 
 #' @export
 
-## compCat() was an older name for calcCat() that was used in earlier SOFIA
-## scripts, so we provide historical support.
+# compCat() was an older name for calcCat() that was used in earlier SOFIA
+# scripts, so we provide historical support.
 
 compCat <- function(...)
 {
-  ## .Deprecated("calcCat")
+  # .Deprecated("calcCat")
   calcCat(...)
 }

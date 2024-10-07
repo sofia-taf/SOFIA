@@ -30,7 +30,7 @@
 
 gitRepos <- function(owner="sofia-taf", full=FALSE)
 {
-  ## Parse JSON
+  # Parse JSON
   value <- function(key, txt)
   {
     v <- grep(key, txt, value=TRUE)
@@ -39,12 +39,12 @@ gitRepos <- function(owner="sofia-taf", full=FALSE)
     v
   }
 
-  ## Examine how many pages of 100 repos each
+  # Examine how many pages of 100 repos each
   txt <- readLines(file.path("https://api.github.com/users", owner))
   n <- as.integer(value("public_repos", txt))
   pages <- 1 + n %/% 100
 
-  ## Read pages
+  # Read pages
   repos <- character()
   for(i in 1:pages)
   {

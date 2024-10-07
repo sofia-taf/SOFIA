@@ -56,7 +56,7 @@
 
 convertData <- function(subdir, min.catch=0.001, quiet=FALSE)
 {
-  ## 1  Import CSV files
+  # 1  Import CSV files
   files <- dir(subdir)
   files <- files[!(files %in% c("catch.csv", "effort.csv", "index.csv"))]
   if(length(files) == 0)
@@ -68,12 +68,12 @@ convertData <- function(subdir, min.catch=0.001, quiet=FALSE)
   csv <- lapply(file.path(subdir, files), read.csv)
   names(csv) <- files
 
-  ## 2  Prepare data frames
+  # 2  Prepare data frames
   years <- range(unlist(lapply(csv, "[[", "year")))
   years <- seq(min(years), max(years))
   catch <- effort <- index <- data.frame(year=years)
 
-  ## 3  Fill data frames
+  # 3  Fill data frames
   for(i in seq_along(files))
   {
     this <- csv[[i]]
@@ -93,7 +93,7 @@ convertData <- function(subdir, min.catch=0.001, quiet=FALSE)
     index[stock] <- i.vector
   }
 
-  ## 4  Write data frames
+  # 4  Write data frames
   group <- basename(subdir)
   write.taf(catch, dir=subdir)
   if(group == "effort" || group == "both")
@@ -103,10 +103,10 @@ convertData <- function(subdir, min.catch=0.001, quiet=FALSE)
   if(!quiet)
     message("Converted ", length(files), " files")
 
-  ## 5  Remove old files
+  # 5  Remove old files
   file.remove(file.path(subdir, files))
 
-  ## 6  Return list
+  # 6  Return list
   out <- list(catch=catch)
   if(group == "effort" || group == "both")
     out$effort <- effort

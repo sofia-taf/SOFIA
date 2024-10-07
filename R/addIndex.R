@@ -40,11 +40,11 @@
 
 addIndex <- function(catch, index, same.index)
 {
-  ## 1a  Make sure index table contains stock 'All' if same.index=TRUE
+  # 1a  Make sure index table contains stock 'All' if same.index=TRUE
   if(same.index && !("All" %in% index$stock))
     stop("using same.index=TRUE, so index table must contain stock='All'")
 
-  ## 1b  Make sure catch and index have matching stocks if same.index=FALSE
+  # 1b  Make sure catch and index have matching stocks if same.index=FALSE
   cstocks <- sort(unique(catch$stock))
   estocks <- sort(unique(index$stock))
   if(!same.index && !any(cstocks %in% estocks))
@@ -53,7 +53,7 @@ addIndex <- function(catch, index, same.index)
     warning("using same.index=FALSE, but ", sum(!(cstocks %in% estocks)),
             " stock(s) in 'catch' not found in 'index'")
 
-  ## 2  Merge and sort
+  # 2  Merge and sort
   x <- if(same.index)
          merge(catch, index[index$stock=="All",c("year","index")], by="year",
                all.x=TRUE, sort=FALSE)

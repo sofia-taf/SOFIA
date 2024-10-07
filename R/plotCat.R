@@ -60,7 +60,7 @@ plotCat <- function(dat, method="cmsy.naive", cats=4, type="count", legend=TRUE)
 {
   names(dat)[1:2] <- c("stock", "year")  # convert Stock->stock, yr->year
 
-  ## Create a new data frame with the categories
+  # Create a new data frame with the categories
   status <- calcCat(dat, method=method)
   bbmsy.cols <- grep("bbmsy", names(status), value=TRUE)
   status <- status[, c("stock", "year", bbmsy.cols, "estCat3", "estCat4")]
@@ -78,7 +78,7 @@ plotCat <- function(dat, method="cmsy.naive", cats=4, type="count", legend=TRUE)
     col <- c("darkgreen", "orange", "yellow", "red")
   }
 
-  ## Plot
+  # Plot
   if(type == "count")
   {
     year <- estCat <- NULL  # suppress R CMD check notes
@@ -92,7 +92,7 @@ plotCat <- function(dat, method="cmsy.naive", cats=4, type="count", legend=TRUE)
     if(legend)
       opar <- par(fig=c(0,0.8,0,1))
     percent <- 100 * prop.table(table(status$year, status$estCat), margin=1)
-    ## beg: areaplot(percent, col=col, ann=FALSE, xaxs="i", yaxs="i", border=NA)
+    # beg: areaplot(percent, col=col, ann=FALSE, xaxs="i", yaxs="i", border=NA)
     x <- as.integer(rownames(percent))
     y <- t(rbind(0, apply(percent, 1, cumsum)))
     matplot(x, y, type="n", ann=FALSE, xaxs="i", yaxs="i")
@@ -102,7 +102,7 @@ plotCat <- function(dat, method="cmsy.naive", cats=4, type="count", legend=TRUE)
       yy <- c(y[,i+1], rev(y[,i]))
       polygon(xx, yy, col=col[i], border=NA)
     }
-    ## end: areaplot(percent, col=col, ann=FALSE, xaxs="i", yaxs="i", border=NA)
+    # end: areaplot(percent, col=col, ann=FALSE, xaxs="i", yaxs="i", border=NA)
     abline(h=c(20,40,60,80), col="lightgray", lty=2)
     title(xlab="Year", ylab="Stock status (%)")
     box()
@@ -126,11 +126,11 @@ plotCat <- function(dat, method="cmsy.naive", cats=4, type="count", legend=TRUE)
 
 #' @export
 
-## plotProp() was an older name for plotCat() that was used in earlier SOFIA
-## scripts, so we provide historical support.
+# plotProp() was an older name for plotCat() that was used in earlier SOFIA
+# scripts, so we provide historical support.
 
 plotProp <- function(...)
 {
-  ## .Deprecated("plotCat")
+  # .Deprecated("plotCat")
   plotCat(...)
 }

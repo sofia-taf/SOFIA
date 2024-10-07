@@ -62,7 +62,7 @@ groupData <- function(dir, quiet=FALSE)
   if(!dir.exists(dir))
     stop("'", dir, "' not found")
 
-  ## 1  Import CSV files
+  # 1  Import CSV files
   files <- dir(dir, pattern="\\.csv$", full=TRUE)
   if(length(files) == 0)
   {
@@ -73,14 +73,14 @@ groupData <- function(dir, quiet=FALSE)
   csv <- lapply(files, read.csv)
   names(csv) <- basename(files)
 
-  ## 2  Create directories
+  # 2  Create directories
   unlink(file.path(dir, c("both","effort","index","neither")), recursive=TRUE)
   dir.create(file.path(dir, "both"))
   dir.create(file.path(dir, "effort"))
   dir.create(file.path(dir, "index"))
   dir.create(file.path(dir, "neither"))
 
-  ## 3  Copy files into directories
+  # 3  Copy files into directories
   for(i in seq_along(files))
   {
     n <- tolower(names(csv[[i]]))
@@ -92,7 +92,7 @@ groupData <- function(dir, quiet=FALSE)
       file.copy(files[i], file.path(dir, "index"))
     if(!("best_effort" %in% n) && !("best_index" %in% n))
       file.copy(files[i], file.path(dir, "neither"))
-    ## Report when column names look suspicious
+    # Report when column names look suspicious
     if(!("best_effort" %in% n) && any(grepl("effort", tolower(n))))
       warning(basename(files[i]), "\n  has effort data (",
               paste(n[grep("effort", tolower(n))], collapse=", "),
@@ -103,7 +103,7 @@ groupData <- function(dir, quiet=FALSE)
               ") but no 'best_index'")
   }
 
-  ## 4  Return list
+  # 4  Return list
   out <- list(both=dir(file.path(dir, "both")),
               effort=dir(file.path(dir, "effort")),
               index=dir(file.path(dir, "index")),
