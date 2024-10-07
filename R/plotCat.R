@@ -13,6 +13,7 @@
 #'        fishing mortality (4 categories).
 #' @param type string indicating the type of plot: \code{"count"},
 #'        \code{"prop"}, or \code{"stock"}.
+#' @param width bar width when \code{type = "count"}.
 #' @param col vector of colors to override the default palette.
 #' @param legend whether to add a legend (applies only if \code{type = "prop"}.
 #'
@@ -57,8 +58,8 @@
 #'
 #' @export
 
-plotCat <- function(dat, method="cmsy.naive", cats=4, type="count", col=NULL,
-                    legend=TRUE)
+plotCat <- function(dat, method="cmsy.naive", cats=4, type="count", width=1,
+                    col=NULL, legend=TRUE)
 {
   names(dat)[1:2] <- c("stock", "year")  # convert Stock->stock, yr->year
 
@@ -90,7 +91,8 @@ plotCat <- function(dat, method="cmsy.naive", cats=4, type="count", col=NULL,
   {
     year <- estCat <- NULL  # suppress R CMD check notes
     ggplot(status, aes(x=year, color=estCat)) +
-      geom_bar(aes(fill=estCat), width=0.5) +
+      geom_bar(aes(fill=estCat), position=position_stack(reverse=TRUE),
+               width=width, linetype=0) +
       theme_minimal() +
       scale_fill_manual(values=col)
   }
