@@ -1,5 +1,3 @@
-#' @docType package
-#'
 #' @name SOFIA-package
 #'
 #' @aliases SOFIA
@@ -42,4 +40,4 @@
 #' \pkg{SOFIA} is used in combination with the packages \pkg{sraplus}
 #' (analytical model) and \pkg{TAF} (workflow).
 
-NA
+"_PACKAGE"
