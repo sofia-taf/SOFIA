@@ -13,6 +13,7 @@
 #'        fishing mortality (4 categories).
 #' @param type string indicating the type of plot: \code{"count"},
 #'        \code{"prop"}, or \code{"stock"}.
+#' @param col vector of colors to override the default palette.
 #' @param legend whether to add a legend (applies only if \code{type = "prop"}.
 #'
 #' @details
@@ -56,7 +57,8 @@
 #'
 #' @export
 
-plotCat <- function(dat, method="cmsy.naive", cats=4, type="count", legend=TRUE)
+plotCat <- function(dat, method="cmsy.naive", cats=4, type="count", col=NULL,
+                    legend=TRUE)
 {
   names(dat)[1:2] <- c("stock", "year")  # convert Stock->stock, yr->year
 
@@ -72,13 +74,15 @@ plotCat <- function(dat, method="cmsy.naive", cats=4, type="count", legend=TRUE)
     status$estCat <- factor(levels[status$estCat3], levels=levels)
     # SOFIA 2024 report uses #1179be (blue) and #f07e29 (orange)
     # Here we use two hues of blue to distinguish between fully and underfished
-    col <- c("#0e6cab", "#1179be", "#f07e29")  # darkblue, blue, orange
+    if(is.null(col))
+      col <- c("#0e6cab", "#1179be", "#f07e29")  # darkblue, blue, orange
   }
   else
   {
     levels <- c("b>1,f<1", "b>1,f>1", "b<1,f<1", "b<1,f>1")
     status$estCat <- factor(levels[status$estCat4], levels=levels)
-    col <- c("darkgreen", "orange", "yellow", "red")
+    if(is.null(col))
+      col <- c("darkgreen", "orange", "yellow", "red")
   }
 
   # Plot

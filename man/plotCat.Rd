@@ -6,7 +6,7 @@
 \title{Plot Categories}
 \usage{
 plotCat(dat, method = "cmsy.naive", cats = 4, type = "count",
-  legend = TRUE)
+  col = NULL, legend = TRUE)
 }
 \arguments{
 \item{dat}{data frame of stock time series, containing columns named
@@ -22,6 +22,8 @@ fishing mortality (4 categories).}
 
 \item{type}{string indicating the type of plot: \code{"count"},
 \code{"prop"}, or \code{"stock"}.}
+
+\item{col}{vector of colors to override the default palette.}
 
 \item{legend}{whether to add a legend (applies only if \code{type = "prop"}.}
 }

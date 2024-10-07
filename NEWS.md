@@ -1,6 +1,8 @@
 # SOFIA 2.1.3 (2024-10-07)
 
-* Changed plotCat() palette to dark blue, blue, and orange.
+* Added argument 'col' to plotCat() to override default palette.
+
+* Changed default plotCat() palette to dark blue, blue, and orange.
 
 
 
