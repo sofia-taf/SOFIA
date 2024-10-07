@@ -31,7 +31,7 @@
 #'
 #' @return
 #' A \code{ggplot} object if \code{type} is \code{"count"} or \code{"stock"}, or
-#' a vector of colors if \code{type} is \code{"prop"}.
+#' a table of percentages if \code{type} is \code{"prop"}.
 #'
 #' @author Rishi Sharma and Arni Magnusson.
 #'
@@ -119,7 +119,7 @@ plotCat <- function(dat, method="cmsy.naive", cats=4, type="count", col=NULL,
              inset=c(-0.3,0), xpd=NA)
       par(opar)
     }
-    invisible(col)
+    invisible(percent)
   }
   else if(type == "stock")
   {

@@ -29,7 +29,7 @@ fishing mortality (4 categories).}
 }
 \value{
 A \code{ggplot} object if \code{type} is \code{"count"} or \code{"stock"}, or
-a vector of colors if \code{type} is \code{"prop"}.
+a table of percentages if \code{type} is \code{"prop"}.
 }
 \description{
 Plot a summary of stock status categories by year: underfished (green), fully

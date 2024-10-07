@@ -4,6 +4,8 @@
 
 * Changed default plotCat() palette to dark blue, blue, and orange.
 
+* Changed plotCat() so it returns a table of percentages if type="prop".
+
 
 
 
