@@ -1,3 +1,10 @@
+# SOFIA 2.1.3 (2024-10-07)
+
+* Changed plotCat() palette to dark blue, blue, and orange.
+
+
+
+
 # SOFIA 2.1.2 (2023-05-19)
 
 * Changed addDriors() so it raises an error if the priors table column
