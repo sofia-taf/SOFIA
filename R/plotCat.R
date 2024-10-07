@@ -60,9 +60,6 @@ plotCat <- function(dat, method="cmsy.naive", cats=4, type="count", legend=TRUE)
 {
   names(dat)[1:2] <- c("stock", "year")  # convert Stock->stock, yr->year
 
-  levels3 <- c("Underfished", "Fully fished", "Overfished")
-  levels4 <- c("b>1,f<1", "b>1,f>1", "b<1,f<1", "b<1,f>1")
-
   ## Create a new data frame with the categories
   status <- calcCat(dat, method=method)
   bbmsy.cols <- grep("bbmsy", names(status), value=TRUE)
@@ -70,13 +67,13 @@ plotCat <- function(dat, method="cmsy.naive", cats=4, type="count", legend=TRUE)
 
   if(cats == 3)
   {
-    levels <- levels3
+    levels <- c("Underfished", "Fully fished", "Overfished")
     status$estCat <- factor(levels[status$estCat3], levels=levels)
     col <- c(3, 7, 2)
   }
   else
   {
-    levels <- levels4
+    levels <- c("b>1,f<1", "b>1,f>1", "b<1,f<1", "b<1,f>1")
     status$estCat <- factor(levels[status$estCat4], levels=levels)
     col <- c("darkgreen", "orange", "yellow", "red")
   }
