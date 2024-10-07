@@ -65,11 +65,14 @@ plotCat <- function(dat, method="cmsy.naive", cats=4, type="count", legend=TRUE)
   bbmsy.cols <- grep("bbmsy", names(status), value=TRUE)
   status <- status[, c("stock", "year", bbmsy.cols, "estCat3", "estCat4")]
 
+  # Assign levels and col
   if(cats == 3)
   {
     levels <- c("Underfished", "Fully fished", "Overfished")
     status$estCat <- factor(levels[status$estCat3], levels=levels)
-    col <- c(3, 7, 2)
+    # SOFIA 2024 report uses #1179be (blue) and #f07e29 (orange)
+    # Here we use two hues of blue to distinguish between fully and underfished
+    col <- c("#0e6cab", "#1179be", "#f07e29")  # darkblue, blue, orange
   }
   else
   {
