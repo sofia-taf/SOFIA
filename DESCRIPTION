@@ -5,6 +5,7 @@ Title: Tools to Work with SOFIA Analyses
 Authors@R: c(person("Rishi", "Sharma", role="aut"),
              person("Arni", "Magnusson", role=c("aut","cre"), email="thisisarni@gmail.com"))
 Imports: graphics, stats, utils, ggplot2, sraplus, TAF
+LazyData: yes
 Description: Tools that support the SOFIA Transparent Assessment Framework
   (SOFIA-TAF).
 License: GPL-3

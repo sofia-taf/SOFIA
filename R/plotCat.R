@@ -52,8 +52,8 @@
 #'
 #' @aliases plotProp
 #'
-#' @importFrom ggplot2 aes geom_bar geom_raster ggplot theme_minimal
-#'                     scale_fill_manual
+#' @importFrom ggplot2 aes geom_bar geom_raster ggplot position_stack
+#'                     theme_minimal scale_fill_manual
 #' @importFrom graphics abline box matplot par polygon title
 #'
 #' @export
@@ -73,10 +73,8 @@ plotCat <- function(dat, method="cmsy.naive", cats=4, type="count", width=1,
   {
     levels <- c("Underfished", "Fully fished", "Overfished")
     status$estCat <- factor(levels[status$estCat3], levels=levels)
-    # SOFIA 2024 report uses #1179be (blue) and #f07e29 (orange)
-    # Here we use two hues of blue to distinguish between fully and underfished
     if(is.null(col))
-      col <- c("#0e6cab", "#1179be", "#f07e29")  # darkblue, blue, orange
+      col <- SOFIA::sofiaColors
   }
   else
   {

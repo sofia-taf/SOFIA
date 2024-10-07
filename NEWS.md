@@ -1,8 +1,10 @@
 # SOFIA 2.1.3 (2024-10-07)
 
+* Added data objects sofiaColors, sofiaDarkblue, sofiaBlue, and sofiaOrange.
+
 * Added arguments 'width' and 'col' to plotCat() to override default style.
 
-* Changed default plotCat() palette to dark blue, blue, and orange.
+* Changed default plotCat() palette to use sofiaColors.
 
 * Changed plotCat() so it returns a table of percentages if type="prop".
 
