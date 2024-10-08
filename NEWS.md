@@ -1,6 +1,6 @@
 # SOFIA 2.1.3 (2024-10-08)
 
-* Added data objects sofiaColors, sofiaDarkblue, sofiaBlue, and sofiaOrange.
+* Added objects sofiaColors, sofiaDarkblue, sofiaBlue, and sofiaOrange.
 
 * Added arguments 'width' and 'col' to plotCat() to override default style.
 
