@@ -52,8 +52,8 @@
 #'
 #' @aliases plotProp
 #'
-#' @importFrom ggplot2 aes geom_bar geom_raster ggplot position_stack
-#'                     theme_minimal scale_fill_manual
+#' @importFrom ggplot2 aes geom_bar geom_raster ggplot theme_minimal
+#'             scale_fill_manual
 #' @importFrom graphics abline box matplot par polygon title
 #'
 #' @export
@@ -88,11 +88,11 @@ plotCat <- function(dat, method="cmsy.naive", cats=4, type="count", width=1,
   if(type == "count")
   {
     year <- estCat <- NULL  # suppress R CMD check notes
+    status$estCat <- ordered(status$estCat, rev(levels))  # reorder
     ggplot(status, aes(x=year, color=estCat)) +
-      geom_bar(aes(fill=estCat), position=position_stack(reverse=TRUE),
-               width=width, linetype=0) +
+      geom_bar(aes(fill=estCat), width=width, linetype=0) +
       theme_minimal() +
-      scale_fill_manual(values=col)
+      scale_fill_manual(values=rev(col))
   }
   else if(type == "prop")
   {
@@ -124,10 +124,12 @@ plotCat <- function(dat, method="cmsy.naive", cats=4, type="count", width=1,
   else if(type == "stock")
   {
     year <- stock <- estCat <- NULL  # suppress R CMD check notes
+    status$estCat <- ordered(status$estCat, rev(levels))  # reorder
     ggplot(status, aes(x=year, y=stock, fill=estCat)) +
       geom_raster() +
       theme_minimal() +
-      scale_fill_manual(values=col)
+      scale_fill_manual(values=rev(col)) +
+      scale_y_discrete(limits=rev)
   }
 }
 

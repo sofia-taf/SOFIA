@@ -1,14 +1,11 @@
-# SOFIA 2.1.3 (2024-10-07)
+# SOFIA 2.1.3 (2024-10-08)
 
 * Added data objects sofiaColors, sofiaDarkblue, sofiaBlue, and sofiaOrange.
 
 * Added arguments 'width' and 'col' to plotCat() to override default style.
 
-* Changed default plotCat() palette to use sofiaColors.
-
-* Changed plotCat() so it returns a table of percentages if type="prop".
-
-* Changed plotCat() barplot style for type="count".
+* Improved stylistic elements in plotCat(): y-axis order, barplot series order,
+  horizontal spacing, and colors.
 
 
 
