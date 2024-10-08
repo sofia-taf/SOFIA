@@ -53,7 +53,7 @@
 #' @aliases plotProp
 #'
 #' @importFrom ggplot2 aes geom_bar geom_raster ggplot theme_minimal
-#'             scale_fill_manual
+#'             scale_fill_manual scale_y_discrete
 #' @importFrom graphics abline box matplot par polygon title
 #'
 #' @export
