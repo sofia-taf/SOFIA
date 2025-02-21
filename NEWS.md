@@ -1,3 +1,10 @@
+# SOFIA (development)
+
+* Added "fishstat*" as a recognized repository name in gitClone().
+
+
+
+
 # SOFIA 2.1.3 (2024-10-08)
 
 * Added objects sofiaColors, sofiaDarkblue, sofiaBlue, and sofiaOrange.

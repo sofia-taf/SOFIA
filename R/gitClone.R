@@ -26,10 +26,12 @@
 #'   \code{2022Area37Demo} \tab \code{2022/Area37/Demo}\cr
 #'   \code{2022DeepSeasCCAMLR} \tab \code{2022/DeepSeasCCAMLR}\cr
 #'   \code{WorkshopPriorsByStock} \tab \code{Workshop/PriorsByStock}\cr
+#'   \code{fishstat21} \tab \code{fishstat/fishstat21}\cr
 #'   \code{SOFIA} \tab \code{SOFIA}
 #' }
-#' For repository names that do not start with a year \code{"20**"} or
-#' \code{"Workshop"}, the value of \code{tree} has no effect.
+#' For repository names that do not start with a year \code{"20**"},
+#' \code{"Workshop"}, or \code{"fishstat"}, the value of \code{tree} has no
+#' effect.
 #'
 #' @return String containing the cloning command.
 #'
@@ -67,6 +69,8 @@ gitClone <- function(repo, topdir="c:/git/sofia-taf", method="https", tree=TRUE)
       subdir <- paste(substring(subdir, c(1,5), c(4,255)), collapse="/")
     else if(grepl("^Workshop.+", subdir))
       subdir <- paste(substring(subdir, c(1,9), c(8,255)), collapse="/")
+    else if(grepl("^fishstat.+", subdir))
+      subdir <- file.path("fishstat", subdir)
   }
 
   os <- Sys.info()[["sysname"]]
