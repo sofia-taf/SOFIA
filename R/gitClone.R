@@ -69,7 +69,7 @@ gitClone <- function(repo, topdir="c:/git/sofia-taf", method="https", tree=TRUE)
       subdir <- paste(substring(subdir, c(1,5), c(4,255)), collapse="/")
     else if(grepl("^Workshop.+", subdir))
       subdir <- paste(substring(subdir, c(1,9), c(8,255)), collapse="/")
-    else if(grepl("^fishstat.+", subdir))
+    else if(grepl("^fishstat", subdir))
       subdir <- file.path("fishstat", subdir)
   }
 
